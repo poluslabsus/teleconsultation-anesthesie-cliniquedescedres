@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Teleconsultation Anesthesie Clinique des Cedres</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+            background: #f5f5f5;
+        }
+        header {
+            background: #333;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+        main {
+            max-width: 800px;
+            margin: 20px auto;
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+        }
+        section {
+            margin-bottom: 40px;
+        }
+        h2 {
+            border-bottom: 2px solid #ddd;
+            padding-bottom: 5px;
+        }
+        .button {
+            display: inline-block;
+            padding: 10px 15px;
+            margin-top: 10px;
+            border-radius: 4px;
+            border: none;
+            background: #333;
+            color: white;
+            text-decoration: none;
+            cursor: pointer;
+        }
+        .button:hover {
+            background: #555;
+        }
+        .question {
+            margin-bottom: 20px;
+        }
+        .question p {
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+        label {
+            margin-right: 15px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Vous souhaitez réaliser votre consultation d'anesthésie en Téléconsultation : c'est à dire à distance via un logiciel dédié sécurisé</h1>
+        <p style="color:white; font-size:20px; margin-top:10px;">
+            Répondez au questionnaire suivant pour savoir si c'est possible pour vous ou pas.
+        </p>
+    </header>
+
+    <main>
+        <section id="questionnaire">
+            <h2>Questionnaire</h2>
+
+            <form id="questionnaire-form">
+                <div class="question">
+                    <p>1. Avez-vous plus de 65 ans ?</p>
+                    <label><input type="radio" name="q1" value="oui"> Oui</label>
+                    <label><input type="radio" name="q1" value="non"> Non</label>
+                </div>
+
+                <div class="question">
+                    <p>2. Êtes-vous mineur ?</p>
+                    <label><input type="radio" name="q2" value="oui"> Oui</label>
+                    <label><input type="radio" name="q2" value="non"> Non</label>
+                </div>
+
+                <div class="question">
+                    <p>3. Prenez-vous des traitements anticoagulants ou anti-aggrégants plaquettaires ? (Aspirine, Resitune, Plavix, Clopidogrel, Xarelto, Eliquis, Antivitamine K, Previscan, Coumadine, Sintrom)</p>
+                    <label><input type="radio" name="q3" value="oui"> Oui</label>
+                    <label><input type="radio" name="q3" value="non"> Non</label>
+                </div>
+
+                <div class="question">
+                    <p>4. Question 4</p>
+                    <label><input type="radio" name="q4" value="oui"> Oui</label>
+                    <label><input type="radio" name="q4" value="non"> Non</label>
+                </div>
+
+                <div class="question">
+                    <p>5. Question 5</p>
+                    <label><input type="radio" name="q5" value="oui"> Oui</label>
+                    <label><input type="radio" name="q5" value="non"> Non</label>
+                </div>
+
+                <div class="question">
+                    <p>6. Question 6</p>
+                    <label><input type="radio" name="q6" value="oui"> Oui</label>
+                    <label><input type="radio" name="q6" value="non"> Non</label>
+                </div>
+
+                <div class="question">
+                    <p>7. Question 7</p>
+                    <label><input type="radio" name="q7" value="oui"> Oui</label>
+                    <label><input type="radio" name="q7" value="non"> Non</label>
+                </div>
+
+                <div class="question">
+                    <p>8. Question 8</p>
+                    <label><input type="radio" name="q8" value="oui"> Oui</label>
+                    <label><input type="radio" name="q8" value="non"> Non</label>
+                </div>
+
+                <div class="question">
+                    <p>9. Question 9</p>
+                    <label><input type="radio" name="q9" value="oui"> Oui</label>
+                    <label><input type="radio" name="q9" value="non"> Non</label>
+                </div>
+
+                <div class="question">
+                    <p>10. Question 10</p>
+                    <label><input type="radio" name="q10" value="oui"> Oui</label>
+                    <label><input type="radio" name="q10" value="non"> Non</label>
+                </div>
+
+                <p id="resultat" style="font-weight:bold; margin-top:20px;"></p>
+
+                <button type="button" class="button" onclick="verifierQuestionnaire()">
+                    Voir le résultat
+                </button>
+
+                <button type="reset" class="button" style="background:#777; margin-left:10px;"
+                    onclick="document.getElementById('resultat').textContent='';">
+                    Effacer mes réponses et recommencer
+                </button>
+            </form>
+        </section>
+
+        <script>
+        function verifierQuestionnaire() {
+            let ok = true;
+
+            // Boucle sur les 10 questions
+            for (let i = 1; i <= 10; i++) {
+                let reponse = document.querySelector('input[name="q' + i + '"]:checked');
+                
+                // Si aucune réponse OU une réponse "non" -> pas ok
+                if (!reponse || reponse.value === "oui") {
+                    ok = false;
+                }
+            }
+
+            let zoneResultat = document.getElementById("resultat");
+
+            if (ok) {
+                zoneResultat.textContent = "C’est possible pour vous.";
+                zoneResultat.style.color = "green";
+            } else {
+                zoneResultat.textContent = "Ce n’est pas possible pour vous, merci de prendre rendez-vous en présentiel via la plateforme Doctolib.";
+                zoneResultat.style.color = "red";
+            }
+        }
+        </script>
+    </main>
+</body>
+</html>
