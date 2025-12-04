@@ -60,7 +60,7 @@
 </head>
 <body>
     <header>
-        <h1>Vous souhaitez réaliser votre consultation d'anesthésie en Téléconsultation : c'est à dire à distance via un logiciel dédié sécurisé</h1>
+        <h1>Vous souhaitez réaliser votre consultation d'anesthésie en Téléconsultation : c'est à dire à distance via un logiciel dédié sécurisé, ce n'est pas une obligation c'est un souhait de votre part</h1>
         <p style="color:white; font-size:20px; margin-top:10px;">
             Répondez au questionnaire suivant pour savoir si c'est possible pour vous ou pas.
         </p>
@@ -169,10 +169,10 @@ Cystectomie, Bricker, Duodenoprancréatectomie, Colectomie, Hépatectomie, Splé
                 r8.value === "oui";
 
             if (ok) {
-                zoneResultat.textContent = "C’est possible pour vous.";
+                zoneResultat.textContent = "C’est possible pour vous, prenez rendez-vous sur Doctolib en sélectionnant Téléconsultation.";
                 zoneResultat.style.color = "green";
             } else {
-                zoneResultat.textContent = "Ce n’est pas possible pour vous, merci de prendre rendez-vous en présentiel via la plateforme Doctolib.";
+                zoneResultat.textContent = "Ce n’est pas possible pour vous, merci de prendre rendez-vous en présentiel via la plateforme Doctolib en sélectionnant rendez-vous sur place.";
                 zoneResultat.style.color = "red";
             }
         }
