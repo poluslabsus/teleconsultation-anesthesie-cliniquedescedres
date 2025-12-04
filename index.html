@@ -171,8 +171,10 @@ Cystectomie, Bricker, Duodenoprancréatectomie, Pancréatectomie, Gastrectomie, 
                 r8.value === "oui";
 
             if (ok) {
-                zoneResultat.textContent = "C’est possible pour vous, prenez rendez-vous sur Doctolib en sélectionnant Téléconsultation. Dans des cas très rares il est possible que lors de la Téléconsultation le médecin anesthésiste constate que votre état de santé nécessite de vous voir en présentiel et que la Téléconsultation ne soit en fait pas possible pour vous. Dans ces rares situations une consultation présentielle devra alors être programmée.";
-                zoneResultat.style.color = "green";
+                zoneResultat.innerHTML =
+    "C’est possible pour vous, prenez rendez-vous sur Doctolib en sélectionnant Téléconsultation.<br><br>" +
+    "Dans des cas très rares il est possible que lors de la Téléconsultation le médecin anesthésiste constate que votre état de santé nécessite de vous voir en présentiel et que la Téléconsultation ne soit en fait pas possible pour vous. Dans ces rares situations une consultation présentielle devra alors être programmée.";
+zoneResultat.style.color = "green";
             } else {
                 zoneResultat.textContent = "Ce n’est pas possible pour vous, merci de prendre rendez-vous en présentiel via la plateforme Doctolib en sélectionnant rendez-vous sur place.";
                 zoneResultat.style.color = "red";
@@ -182,3 +184,4 @@ Cystectomie, Bricker, Duodenoprancréatectomie, Pancréatectomie, Gastrectomie, 
     </main>
 </body>
 </html>
+
