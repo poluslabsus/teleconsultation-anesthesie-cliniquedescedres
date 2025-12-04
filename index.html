@@ -95,7 +95,7 @@
                 </div>
 
                 <div class="question">
-                    <p>4. Etes vous opéré pour une des interventions suivantes ?<br><br>
+                    <p>4. Etes-vous opéré pour une des interventions suivantes ?<br><br>
 Cystectomie, Bricker, Duodenoprancréatectomie, Pancréatectomie, Gastrectomie, Colectomie, Hépatectomie, Splénectomie, Prothese Totale de Hanche ou de Genou, Prothèse Totale d'Epaule, Hystérectomie, Osteotomie BiMaxillaire ou Mandibulaire, Laryngectomie, Cervicotomie, Parotidectomie, Cathetérisme des voies Biliaires, Dissection sous muqueuse ou Mucosectomie Gastrique ou Colique</p>
                     <label><input type="radio" name="q4" value="oui"> Oui</label>
                     <label><input type="radio" name="q4" value="non"> Non</label>
@@ -174,7 +174,8 @@ Cystectomie, Bricker, Duodenoprancréatectomie, Pancréatectomie, Gastrectomie, 
             if (ok) {
                 zoneResultat.innerHTML =
                     "C’est possible pour vous, prenez rendez-vous sur Doctolib en sélectionnant Téléconsultation.<br><br>" +
-                    "Dans des cas très rares il est possible que lors de la Téléconsultation le médecin anesthésiste constate que votre état de santé nécessite de vous voir en présentiel et que la Téléconsultation ne soit en fait pas possible pour vous. Dans ces rares situations une consultation présentielle devra alors être programmée.";
+                    "Dans des cas très rares il est possible que lors de la Téléconsultation le médecin anesthésiste constate que votre état de santé nécessite de vous voir en présentiel et que la Téléconsultation ne soit en fait pas possible pour vous. Dans ces rares situations une consultation présentielle devra alors être programmée.<br><br>" +
+"Pensez à mettre avant la Téléconsultation sur Doctolib vos ordonnances, compte rendus de consultations spécialisées notamment de cardiologie et le questionnaire d'anesthésie.";
                 zoneResultat.style.color = "green";
             } else {
                 zoneResultat.textContent =
