@@ -85,6 +85,7 @@
 
                 <div class="question">
                     <p>3. Prenez-vous des traitements anticoagulants ou anti-aggrégants plaquettaires ? 
+
 (Aspirine, Resitune, Kardegic, Plavix, Clopidogrel, Xarelto, Rivaroxaban, Eliquis, Apixaban, Pradaxa, Dabigatran, Antivitamine K, Previscan, Fluindione, Coumadine, Warfarine, Sintrom, Acenocoumarol)</p>
                     <label><input type="radio" name="q3" value="oui"> Oui</label>
                     <label><input type="radio" name="q3" value="non"> Non</label>
@@ -92,7 +93,8 @@
 
                 <div class="question">
                     <p>4. Etes vous opéré pour une des interventions suivantes ? 
-Cystectomie, Bricker, Duodenoprancréatectomie, Colectomie, Hépatectomie, Splénectomie, Prothese Totale de Hanche ou de Genou, Prothèse Totale d'Epaule, Hystérectomie, Osteotomie BiMaxillaire ou Mandibulaire, Laryngectomie, Cervicotomie, Parotidectomie, Cathetérisme des voies Biliaires, Dissection sous muqueuse ou Mucosectomie Gastrique ou Colique</p>
+
+Cystectomie, Bricker, Duodenoprancréatectomie, Pancréatectomie, Gastrectomie, Colectomie, Hépatectomie, Splénectomie, Prothese Totale de Hanche ou de Genou, Prothèse Totale d'Epaule, Hystérectomie, Osteotomie BiMaxillaire ou Mandibulaire, Laryngectomie, Cervicotomie, Parotidectomie, Cathetérisme des voies Biliaires, Dissection sous muqueuse ou Mucosectomie Gastrique ou Colique</p>
                     <label><input type="radio" name="q4" value="oui"> Oui</label>
                     <label><input type="radio" name="q4" value="non"> Non</label>
                 </div>
@@ -169,7 +171,9 @@ Cystectomie, Bricker, Duodenoprancréatectomie, Colectomie, Hépatectomie, Splé
                 r8.value === "oui";
 
             if (ok) {
-                zoneResultat.textContent = "C’est possible pour vous, prenez rendez-vous sur Doctolib en sélectionnant Téléconsultation.";
+                zoneResultat.textContent = "C’est possible pour vous, prenez rendez-vous sur Doctolib en sélectionnant Téléconsultation. 
+
+Dans des cas très rares il est possible que lors de la Téléconsultation le médecin anesthésiste constate que votre état de santé nécessité de vous voir en présentiel et que la Téléconsultation ne soit en fait pas possible pour vous. Dans ces rares situations une consultation présentielle devra alors être programmée. ";
                 zoneResultat.style.color = "green";
             } else {
                 zoneResultat.textContent = "Ce n’est pas possible pour vous, merci de prendre rendez-vous en présentiel via la plateforme Doctolib en sélectionnant rendez-vous sur place.";
