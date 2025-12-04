@@ -60,6 +60,10 @@
         label {
             margin-right: 15px;
         }
+        .centered {
+            text-align: center;
+            margin-top: 20px;
+        }
     </style>
 </head>
 <body>
@@ -135,13 +139,22 @@ Cystectomie, Bricker, Duodenoprancréatectomie, Pancréatectomie, Gastrectomie, 
                     onclick="document.getElementById('resultat').textContent='';">
                     Effacer mes réponses et recommencer
                 </button>
+
+                <!-- BOUTON DOCTOLIB AJOUTÉ -->
+                <div class="centered">
+                    <a class="button"
+                       href="https://www.doctolib.fr/cabinet-medical/echirolles/cabinet-d-anesthesie-des-cedres"
+                       target="_blank">
+                        Retour vers Doctolib pour la prise de rendez-vous
+                    </a>
+                </div>
+
             </form>
         </section>
 
         <script>
         function verifierQuestionnaire() {
 
-            // Récupération des réponses
             const r1 = document.querySelector('input[name="q1"]:checked');
             const r2 = document.querySelector('input[name="q2"]:checked');
             const r3 = document.querySelector('input[name="q3"]:checked');
@@ -153,14 +166,12 @@ Cystectomie, Bricker, Duodenoprancréatectomie, Pancréatectomie, Gastrectomie, 
 
             const zoneResultat = document.getElementById("resultat");
 
-            // Vérifier que toutes les questions ont été cochées
             if (!r1 || !r2 || !r3 || !r4 || !r5 || !r6 || !r7 || !r8) {
                 zoneResultat.textContent = "Merci de répondre à toutes les questions.";
                 zoneResultat.style.color = "red";
                 return;
             }
 
-            // Conditions pour que ce soit possible :
             const ok =
                 r1.value === "non" &&
                 r2.value === "non" &&
@@ -173,9 +184,9 @@ Cystectomie, Bricker, Duodenoprancréatectomie, Pancréatectomie, Gastrectomie, 
 
             if (ok) {
                 zoneResultat.innerHTML =
-                    "C’est possible pour vous, prenez rendez-vous sur Doctolib en sélectionnant Téléconsultation.<br><br>" +
+                    "C’EST POSSIBLE POUR VOUS, prenez rendez-vous sur Doctolib en sélectionnant Téléconsultation.<br><br>" +
                     "Dans des cas très rares il est possible que lors de la Téléconsultation le médecin anesthésiste constate que votre état de santé nécessite de vous voir en présentiel et que la Téléconsultation ne soit en fait pas possible pour vous. Dans ces rares situations une consultation présentielle devra alors être programmée.<br><br>" +
-"Pensez à mettre avant la Téléconsultation sur Doctolib vos ordonnances, compte rendus de consultations spécialisées notamment de cardiologie et le questionnaire d'anesthésie.";
+                    "Pensez à mettre avant la Téléconsultation sur Doctolib vos ordonnances, compte rendus de consultations spécialisées notamment de cardiologie et le questionnaire d'anesthésie.";
                 zoneResultat.style.color = "green";
             } else {
                 zoneResultat.textContent =
