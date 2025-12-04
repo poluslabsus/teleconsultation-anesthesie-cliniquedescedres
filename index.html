@@ -68,6 +68,12 @@
 </head>
 <body>
     <header>
+        <!-- Logo de la Clinique des Cèdres -->
+        <!-- Mets dans ton dépôt un fichier image avec ce nom ou adapte le chemin si besoin -->
+        <img src="logo-clinique-des-cedres.png"
+             alt="Clinique des Cèdres"
+             style="max-width:250px; display:block; margin:0 auto 10px auto;">
+
         <h1>Vous souhaitez réaliser votre consultation d'anesthésie en Téléconsultation : c'est à dire à distance via un logiciel dédié sécurisé.</h1>
         <p style="color:white; font-size:20px; margin-top:10px;">
             La Téléconsultation n'est pas une obligation c'est un souhait de votre part et une possibilité que nous proposons si vous êtes éligible.
@@ -136,12 +142,12 @@ Cystectomie, Bricker, Duodenoprancréatectomie, Pancréatectomie, Gastrectomie, 
                 </button>
 
                 <button type="reset" class="button" style="background:#777; margin-left:10px;"
-                    onclick="document.getElementById('resultat').textContent='';">
+                    onclick="document.getElementById('resultat').innerHTML=''; document.getElementById('btn-doctolib').style.display='none';">
                     Effacer mes réponses et recommencer
                 </button>
 
-                <!-- BOUTON DOCTOLIB AJOUTÉ -->
-                <div class="centered">
+                <!-- Bouton Doctolib : caché au départ, visible seulement après la réponse -->
+                <div class="centered" id="btn-doctolib" style="display:none;">
                     <a class="button"
                        href="https://www.doctolib.fr/cabinet-medical/echirolles/cabinet-d-anesthesie-des-cedres"
                        target="_blank">
@@ -165,6 +171,10 @@ Cystectomie, Bricker, Duodenoprancréatectomie, Pancréatectomie, Gastrectomie, 
             const r8 = document.querySelector('input[name="q8"]:checked');
 
             const zoneResultat = document.getElementById("resultat");
+            const boutonDoctolib = document.getElementById("btn-doctolib");
+
+            // Par défaut, tant qu'on n'a pas une réponse valide, on cache le bouton
+            boutonDoctolib.style.display = "none";
 
             if (!r1 || !r2 || !r3 || !r4 || !r5 || !r6 || !r7 || !r8) {
                 zoneResultat.textContent = "Merci de répondre à toutes les questions.";
@@ -193,10 +203,11 @@ Cystectomie, Bricker, Duodenoprancréatectomie, Pancréatectomie, Gastrectomie, 
                     "CE N'EST PAS POSSIBLE pour vous, merci de prendre rendez-vous en présentiel via la plateforme Doctolib en sélectionnant rendez-vous sur place.";
                 zoneResultat.style.color = "red";
             }
+
+            // Une fois la réponse affichée (ok ou pas ok), on affiche le bouton Doctolib
+            boutonDoctolib.style.display = "block";
         }
         </script>
     </main>
 </body>
 </html>
-
-
