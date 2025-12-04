@@ -92,45 +92,33 @@
 
                 <div class="question">
                     <p>4. Etes vous opéré pour une des interventions suivantes ? 
-Cystectomie, Bricker, Duodenoprancréatectomie, Colectomie, Hépatectomie, Splénectomie, Prothese Totale de Hanche ou de Genou, Prothèse Totale d'Epaule, Hystérectomie, Osteotomie BiMaxillaire ou Mandibulaire, Laryngectomie, Cervicotomie, Parotidectomie, Cathetérisme des voies Biliaires, Dissection sous muqueuse ou  Mucosectomie Gastrique ou Colique </p>
+Cystectomie, Bricker, Duodenoprancréatectomie, Colectomie, Hépatectomie, Splénectomie, Prothese Totale de Hanche ou de Genou, Prothèse Totale d'Epaule, Hystérectomie, Osteotomie BiMaxillaire ou Mandibulaire, Laryngectomie, Cervicotomie, Parotidectomie, Cathetérisme des voies Biliaires, Dissection sous muqueuse ou Mucosectomie Gastrique ou Colique</p>
                     <label><input type="radio" name="q4" value="oui"> Oui</label>
                     <label><input type="radio" name="q4" value="non"> Non</label>
                 </div>
 
                 <div class="question">
-                    <p>5. Avez vous une bonne connexion internet ?</p>
+                    <p>5. Avez-vous une connexion internet permettant une visio ?</p>
                     <label><input type="radio" name="q5" value="oui"> Oui</label>
                     <label><input type="radio" name="q5" value="non"> Non</label>
                 </div>
 
                 <div class="question">
-                    <p>6. Avez vous une webcam fonctionnelle ?</p>
+                    <p>6. Avez-vous une webcam fonctionnelle ?</p>
                     <label><input type="radio" name="q6" value="oui"> Oui</label>
                     <label><input type="radio" name="q6" value="non"> Non</label>
                 </div>
 
                 <div class="question">
-                    <p>7. Avez vous un microphone fonctionnel ?</p>
+                    <p>7. Avez-vous un microphone fonctionnel ?</p>
                     <label><input type="radio" name="q7" value="oui"> Oui</label>
                     <label><input type="radio" name="q7" value="non"> Non</label>
                 </div>
 
                 <div class="question">
-                    <p>8. Serez vous dans un endroit calme et silencieux lors de la téléconsultation ?</p>
+                    <p>8. Serez-vous dans un endroit calme et silencieux lors de la téléconsultation ?</p>
                     <label><input type="radio" name="q8" value="oui"> Oui</label>
                     <label><input type="radio" name="q8" value="non"> Non</label>
-                </div>
-
-                <div class="question">
-                    <p>9. Question 9</p>
-                    <label><input type="radio" name="q9" value="oui"> Oui</label>
-                    <label><input type="radio" name="q9" value="non"> Non</label>
-                </div>
-
-                <div class="question">
-                    <p>10. Question 10</p>
-                    <label><input type="radio" name="q10" value="oui"> Oui</label>
-                    <label><input type="radio" name="q10" value="non"> Non</label>
                 </div>
 
                 <p id="resultat" style="font-weight:bold; margin-top:20px;"></p>
@@ -148,19 +136,37 @@ Cystectomie, Bricker, Duodenoprancréatectomie, Colectomie, Hépatectomie, Splé
 
         <script>
         function verifierQuestionnaire() {
-            let ok = true;
 
-            // Boucle sur les 10 questions
-            for (let i = 1; i <= 10; i++) {
-                let reponse = document.querySelector('input[name="q' + i + '"]:checked');
-                
-                // Si aucune réponse OU une réponse "non" -> pas ok
-                if (!reponse || reponse.value === "oui") {
-                    ok = false;
-                }
+            // Récupération des réponses
+            const r1 = document.querySelector('input[name="q1"]:checked');
+            const r2 = document.querySelector('input[name="q2"]:checked');
+            const r3 = document.querySelector('input[name="q3"]:checked');
+            const r4 = document.querySelector('input[name="q4"]:checked');
+            const r5 = document.querySelector('input[name="q5"]:checked');
+            const r6 = document.querySelector('input[name="q6"]:checked');
+            const r7 = document.querySelector('input[name="q7"]:checked');
+            const r8 = document.querySelector('input[name="q8"]:checked');
+
+            const zoneResultat = document.getElementById("resultat");
+
+            // Vérifier que toutes les questions ont été cochées
+            if (!r1 || !r2 || !r3 || !r4 || !r5 || !r6 || !r7 || !r8) {
+                zoneResultat.textContent = "Merci de répondre à toutes les questions.";
+                zoneResultat.style.color = "red";
+                return;
             }
 
-            let zoneResultat = document.getElementById("resultat");
+            // Conditions pour que ce soit possible :
+            // Q1-4 = NON, Q5-8 = OUI
+            const ok =
+                r1.value === "non" &&
+                r2.value === "non" &&
+                r3.value === "non" &&
+                r4.value === "non" &&
+                r5.value === "oui" &&
+                r6.value === "oui" &&
+                r7.value === "oui" &&
+                r8.value === "oui";
 
             if (ok) {
                 zoneResultat.textContent = "C’est possible pour vous.";
