@@ -16,8 +16,24 @@
             background: #4da3ff;
             color: white;
             padding: 20px;
-            text-align: center;
+            display: flex;
+            align-items: center;
+            justify-content: left;
+            gap: 20px;
         }
+
+        /* NOUVEL ENCADRÉ AU CENTRE DU HEADER */
+        .header-box {
+            background: #eeeeee;
+            border-radius: 8px;
+            padding: 10px 20px;
+            color: black;
+            font-size: 20px;
+            text-align: center;
+            margin: 0 auto;
+            display: inline-block;
+        }
+
         main {
             max-width: 800px;
             margin: 20px auto;
@@ -66,7 +82,7 @@
             margin-top: 20px;
         }
 
-        /* ENCADRÉ MODIFIÉ AVEC PREMIÈRE LIGNE EN GRAS ET TEXTE CENTRÉ */
+        /* ENCADRÉ BAS DE PAGE */
         .encadre {
             background: #eeeeee;
             border-radius: 8px;
@@ -86,15 +102,18 @@
     </style>
 </head>
 <body>
+
+    <!-- HEADER MODIFIÉ -->
     <header>
+        <!-- Logo déplacé à gauche -->
         <img src="logo.png"
              alt="Clinique des Cèdres"
-             style="max-width:250px; display:block; margin:0 auto 10px auto;">
+             style="max-width:180px; height:auto;">
 
-        <h1>Vous souhaitez réaliser votre consultation d'anesthésie en Téléconsultation : c'est à dire à distance via un logiciel dédié sécurisé.</h1>
-        <p style="color:white; font-size:20px; margin-top:10px;">
-            La Téléconsultation n'est pas une obligation c'est un souhait de votre part et une possibilité que nous proposons si vous êtes éligible.
-        </p>
+        <!-- Encadré au centre -->
+        <div class="header-box">
+            Cabinet d'Anesthésie de la Clinique des Cèdres
+        </div>
     </header>
 
     <main>
