@@ -13,7 +13,7 @@
             background: #f5f5f5;
         }
 
-        /* HEADER RECONSTRUIT */
+        /* BANDEAU BLEU */
         header {
             background: #4da3ff;
             color: white;
@@ -41,24 +41,6 @@
             max-width: 500px;
         }
 
-        /* Bloc du texte bleu restauré */
-        .header-text {
-            flex: 2;
-            text-align: left;
-        }
-
-        .header-text h1 {
-            margin: 0;
-            font-size: 20px;
-            color: white;
-        }
-
-        .header-text p {
-            margin: 8px 0 0 0;
-            font-size: 17px;
-            color: white;
-        }
-
         main {
             max-width: 800px;
             margin: 20px auto;
@@ -66,6 +48,18 @@
             padding: 20px;
             border-radius: 8px;
         }
+
+        /* NOUVEL ENCADRÉ GRIS SOUS LE BANDEAU BLEU */
+        .encadre-tele {
+            background: #eeeeee;
+            border-radius: 8px;
+            padding: 15px;
+            color: black;
+            font-size: 17px; /* plus petite taille des 2 anciennes (h1 20px, p 17px) */
+            text-align: left;
+            margin-bottom: 20px;
+        }
+
         section {
             margin-bottom: 40px;
         }
@@ -107,7 +101,7 @@
             margin-top: 20px;
         }
 
-        /* Encadré bas de page */
+        /* Encadré bas de page (inchangé) */
         .encadre {
             background: #eeeeee;
             border-radius: 8px;
@@ -128,7 +122,7 @@
 </head>
 <body>
 
-    <!-- HEADER MODIFIÉ + TEXTES RESTAURÉS -->
+    <!-- HEADER : logo + encadré gris au centre -->
     <header>
         <!-- Logo à gauche -->
         <img src="logo.png"
@@ -141,15 +135,15 @@
                 Cabinet d'Anesthésie de la Clinique des Cèdres
             </div>
         </div>
-
-        <!-- Textes bleus restaurés à droite -->
-        <div class="header-text">
-            <h1>Vous souhaitez réaliser votre consultation d'anesthésie en Téléconsultation : c'est à dire à distance via un logiciel dédié sécurisé.</h1>
-            <p>La Téléconsultation n'est pas une obligation c'est un souhait de votre part et une possibilité que nous proposons si vous êtes éligible.</p>
-        </div>
     </header>
 
     <main>
+        <!-- TEXTE DÉPLACÉ DANS UN ENCADRÉ GRIS SOUS LE BANDEAU BLEU -->
+        <div class="encadre-tele">
+            Vous souhaitez réaliser votre consultation d'anesthésie en Téléconsultation : c'est à dire à distance via un logiciel dédié sécurisé.<br><br>
+            La Téléconsultation n'est pas une obligation c'est un souhait de votre part et une possibilité que nous proposons si vous êtes éligible.
+        </div>
+
         <section id="questionnaire">
             <h2>Questionnaire : Merci de répondre à TOUTES les questions pour savoir si c'est possible pour vous ou pas.</h2>
 
