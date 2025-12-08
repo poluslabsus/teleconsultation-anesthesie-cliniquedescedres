@@ -19,11 +19,9 @@
             margin: 0;
             padding: 0;
             line-height: 1.6;
-            background: #ffffff; /* 🔥 fond blanc pur */
+            background: #ffffff;
             color: var(--body-text);
         }
-
-        /* ====== ENTÊTE CENTRÉ ====== */
 
         .header-container {
             width: 100%;
@@ -38,20 +36,19 @@
             margin: 0;
             display: inline-block;
             position: relative;
-            padding-bottom: 10px; /* 🔥 espace texte → trait */
+            padding-bottom: 10px;
         }
 
         .titre-site::after {
             content: "";
             display: block;
-            width: 100px;          /* 🔥 barre raccourcie à 100px */
-            height: 4px;           /* 🔥 épaisseur */
+            width: 100px;
+            height: 4px;
             background-color: var(--primary-text);
-            margin: 10px auto 0 auto; /* 🔥 centrée + espace */
+            margin: 10px auto 0 auto;
             border-radius: 3px;
         }
 
-        /* Sous-titre ajouté */
         .sous-titre {
             font-size: 40px;
             color: var(--primary-text);
@@ -60,15 +57,11 @@
             margin-bottom: 30px;
         }
 
-        /* ================== CONTENU ================== */
-
         main {
             max-width: 800px;
             margin: 20px auto 40px auto;
             background: #ffffff;
             padding: 20px;
-
-            /* 🔥 Encadrement + ombre + arrondis */
             border: 2px solid black;
             border-radius: 15px;
             box-shadow: 0 4px 15px rgba(0,0,0,0.25);
@@ -185,21 +178,56 @@
 
             <form id="questionnaire-form">
 
-                <div class="question">
-                    <p>1. Avez-vous plus de 65 ans ?</p>
+                <!-- Q1 : visible dès l'ouverture -->
+                <div class="question" id="bloc-q1">
+                    <p>1. Avez-vous plus de <b>70 ans</b> ?</p>
                     <label><input type="radio" name="q1" value="oui"> Oui</label>
                     <label><input type="radio" name="q1" value="non"> Non</label>
                 </div>
 
-                <div class="question">
-                    <p>2. Êtes-vous mineur ?</p>
+                <!-- Q2 : intervention -->
+                <div class="question" id="bloc-q2">
+                    <p>2. Sélectionnez votre intervention :</p>
+                    <select name="q3" id="q3">
+                        <option value="">-- Sélectionnez votre intervention --</option>
+                        <option value="cystectomie">Cystectomie</option>
+                        <option value="bricker">Bricker</option>
+                        <option value="duodenopancreatectomie">Duodenoprancréatectomie</option>
+                        <option value="pancreatectomie">Pancréatectomie</option>
+                        <option value="gastrectomie">Gastrectomie</option>
+                        <option value="colectomie">Colectomie</option>
+                        <option value="hepatectomie">Hépatectomie</option>
+                        <option value="splenectomie">Splénectomie</option>
+                        <option value="pth-pth">Prothèse Totale de Hanche</option>
+                        <option value="ptg-ptg">Prothèse Totale de Genou</option>
+                        <option value="pte">Prothèse Totale d'Épaule</option>
+                        <option value="hysterectomie">Hystérectomie</option>
+                        <option value="osteotomie-bimaxillaire">Ostéotomie BiMaxillaire</option>
+                        <option value="osteotomie-mandibulaire">Ostéotomie Mandibulaire</option>
+                        <option value="laryngectomie">Laryngectomie</option>
+                        <option value="cervicotomie">Cervicotomie</option>
+                        <option value="parotidectomie">Parotidectomie</option>
+                        <option value="catheterisme-voies-biliaires">Cathétérisme des voies biliaires</option>
+                        <option value="dissection-sous-muqueuse-gastrique">Dissection sous-muqueuse gastrique</option>
+                        <option value="dissection-sous-muqueuse-colique">Dissection sous-muqueuse colique</option>
+                        <option value="mucosectomie-gastrique">Mucosectomie gastrique</option>
+                        <option value="mucosectomie-colique">Mucosectomie colique</option>
+                        <option value="mastectomie-affirmation-genre">Mastectomie d'affirmation de genre</option>
+                        <option value="autre">Mon intervention n'est pas dans cette liste</option>
+                    </select>
+                </div>
+
+                <!-- Q3 : mineur -->
+                <div class="question" id="bloc-q3">
+                    <p>3. Êtes-vous mineur ?</p>
                     <label><input type="radio" name="q2" value="oui"> Oui</label>
                     <label><input type="radio" name="q2" value="non"> Non</label>
                 </div>
 
-                <div class="question">
+                <!-- Q4 : anticoagulants -->
+                <div class="question" id="bloc-q4">
                     <p>
-                        3. Prenez-vous des traitements anticoagulants ou 
+                        4. Prenez-vous des traitements anticoagulants ou 
                         anti-aggrégants plaquettaires ?
                         <br><br>
                         <i style="font-weight: normal;">
@@ -209,47 +237,33 @@
                         Sintrom, Acenocoumarol)
                         </i>
                     </p>
-                    <label><input type="radio" name="q3" value="oui"> Oui</label>
-                    <label><input type="radio" name="q3" value="non"> Non</label>
-                </div>
-
-                <div class="question">
-                    <p>
-                        4. Êtes-vous opéré pour une des interventions suivantes ?
-                        <br><br>
-                        <i style="font-weight: normal;">
-                        Cystectomie, Bricker, Duodenoprancréatectomie, Pancréatectomie,
-                        Gastrectomie, Colectomie, Hépatectomie, Splénectomie, 
-                        Prothèse Totale de Hanche ou de Genou, Prothèse Totale d'Épaule, 
-                        Hystérectomie, Ostéotomie BiMaxillaire ou Mandibulaire, 
-                        Laryngectomie, Cervicotomie, Parotidectomie, Cathétérisme des 
-                        voies biliaires, Dissection sous-muqueuse ou Mucosectomie 
-                        gastrique ou colique, Mastectomie d'affirmation de genre
-                        </i>
-                    </p>
                     <label><input type="radio" name="q4" value="oui"> Oui</label>
                     <label><input type="radio" name="q4" value="non"> Non</label>
                 </div>
 
-                <div class="question">
+                <!-- Q5 -->
+                <div class="question" id="bloc-q5">
                     <p>5. Avez-vous une connexion internet permettant une visio ?</p>
                     <label><input type="radio" name="q5" value="oui"> Oui</label>
                     <label><input type="radio" name="q5" value="non"> Non</label>
                 </div>
 
-                <div class="question">
+                <!-- Q6 -->
+                <div class="question" id="bloc-q6">
                     <p>6. Avez-vous une webcam fonctionnelle ?</p>
                     <label><input type="radio" name="q6" value="oui"> Oui</label>
                     <label><input type="radio" name="q6" value="non"> Non</label>
                 </div>
 
-                <div class="question">
+                <!-- Q7 -->
+                <div class="question" id="bloc-q7">
                     <p>7. Avez-vous un microphone fonctionnel ?</p>
                     <label><input type="radio" name="q7" value="oui"> Oui</label>
                     <label><input type="radio" name="q7" value="non"> Non</label>
                 </div>
 
-                <div class="question">
+                <!-- Q8 -->
+                <div class="question" id="bloc-q8">
                     <p>8. Serez-vous dans un endroit calme et silencieux lors de la téléconsultation ?</p>
                     <label><input type="radio" name="q8" value="oui"> Oui</label>
                     <label><input type="radio" name="q8" value="non"> Non</label>
@@ -257,12 +271,9 @@
 
                 <p id="resultat" style="font-weight:bold; margin-top:20px;"></p>
 
-                <button type="button" class="button" onclick="verifierQuestionnaire()">
-                    Voir le résultat
-                </button>
-
+                <!-- Bouton RESET uniquement -->
                 <button type="reset" class="button" style="background: var(--button-bg); margin-left:10px;"
-                    onclick="document.getElementById('resultat').innerHTML=''; document.getElementById('btn-doctolib').style.display='none';">
+                    onclick="reinitialiserFormulaire();">
                     Effacer mes réponses
                 </button>
 
@@ -278,60 +289,198 @@
         </section>
 
         <script>
-        function verifierQuestionnaire() {
-            const r1 = document.querySelector('input[name="q1"]:checked');
-            const r2 = document.querySelector('input[name="q2"]:checked');
-            const r3 = document.querySelector('input[name="q3"]:checked');
-            const r4 = document.querySelector('input[name="q4"]:checked');
-            const r5 = document.querySelector('input[name="q5"]:checked');
-            const r6 = document.querySelector('input[name="q6"]:checked');
-            const r7 = document.querySelector('input[name="q7"]:checked');
-            const r8 = document.querySelector('input[name="q8"]:checked');
+        function evalQuestions() {
+            const blocIds = [
+                'bloc-q1','bloc-q2','bloc-q3',
+                'bloc-q4','bloc-q5','bloc-q6',
+                'bloc-q7','bloc-q8'
+            ];
+
+            // Tout cacher sauf Q1, on va ensuite dévoiler au fur et à mesure
+            blocIds.forEach((id, index) => {
+                const el = document.getElementById(id);
+                if (!el) return;
+                if (index === 0) {
+                    el.style.display = 'block'; // Q1
+                } else {
+                    el.style.display = 'none';
+                }
+            });
 
             const zoneResultat = document.getElementById("resultat");
             const boutonDoctolib = document.getElementById("btn-doctolib");
+            zoneResultat.textContent = "";
+            zoneResultat.style.color = "";
             boutonDoctolib.style.display = "none";
 
-            if (!r1 || !r2 || !r3 || !r4 || !r5 || !r6 || !r7 || !r8) {
-                zoneResultat.textContent = "Merci de répondre à toutes les questions.";
-                zoneResultat.style.color = "red";
-                return;
+            // Récupération des réponses
+            const r1 = document.querySelector('input[name="q1"]:checked'); // >70 ans
+            const selectInterv = document.getElementById('q3');            // intervention (q3)
+            const r2 = document.querySelector('input[name="q2"]:checked'); // mineur
+            const r4 = document.querySelector('input[name="q4"]:checked'); // anticoagulant
+            const r5 = document.querySelector('input[name="q5"]:checked'); // visio
+            const r6 = document.querySelector('input[name="q6"]:checked'); // webcam
+            const r7 = document.querySelector('input[name="q7"]:checked'); // micro
+            const r8 = document.querySelector('input[name="q8"]:checked'); // calme
+
+            let impossible = false;
+
+            // Étape 1 : Q1
+            if (r1) {
+                if (r1.value === "oui") {
+                    impossible = true;
+                } else {
+                    // Q1 = non -> on peut montrer Q2
+                    const b2 = document.getElementById('bloc-q2');
+                    if (b2) b2.style.display = 'block';
+                }
             }
 
-            const ok =
-                r1.value === "non" &&
-                r2.value === "non" &&
-                r3.value === "non" &&
-                r4.value === "non" &&
-                r5.value === "oui" &&
-                r6.value === "oui" &&
-                r7.value === "oui" &&
-                r8.value === "oui";
+            // Étape 2 : Q2 (intervention)
+            let interventionValide = false;
+            if (!impossible && r1 && r1.value === "non") {
+                if (selectInterv && selectInterv.value !== "") {
+                    if (selectInterv.value !== "autre") {
+                        // Intervention dans la liste => pas éligible
+                        impossible = true;
+                    } else {
+                        // Mon intervention n'est pas dans cette liste
+                        interventionValide = true;
+                        const b3 = document.getElementById('bloc-q3');
+                        if (b3) b3.style.display = 'block';
+                    }
+                }
+            }
 
-            if (ok) {
-                zoneResultat.style.color = "green";
-                zoneResultat.innerHTML =
-                    "C’EST POSSIBLE POUR VOUS, prenez rendez-vous sur Doctolib en sélectionnant Téléconsultation.<br><br>" +
-                    "<div class='encadre'>" +
-                        "<div class='titre-encadre'>A lire avant votre téléconsultation</div>" +
-                        "<div class='texte-encadre'>" +
-                        "Dans des cas très rares il est possible que lors de la Téléconsultation le médecin anesthésiste " +
-                        "constate que votre état de santé nécessite de vous voir en présentiel et que la Téléconsultation " +
-                        "ne soit en fait pas possible pour vous. Dans ces rares situations une consultation présentielle " +
-                        "devra alors être programmée.<br><br>" +
-                        "Pensez à mettre avant la Téléconsultation sur Doctolib vos ordonnances, compte rendus de consultations " +
-                        "spécialisées notamment de cardiologie et le questionnaire d'anesthésie." +
-                        "</div>" +
-                    "</div>";
-            } else {
+            // Étape 3 : Q3 (mineur)
+            if (!impossible && r1 && r1.value === "non" && interventionValide) {
+                if (r2) {
+                    if (r2.value === "oui") {
+                        impossible = true;
+                    } else {
+                        // majeur => on peut afficher Q4
+                        const b4 = document.getElementById('bloc-q4');
+                        if (b4) b4.style.display = 'block';
+                    }
+                }
+            }
+
+            // Étape 4 : Q4 (anticoagulants)
+            if (!impossible && r1 && r1.value === "non" && interventionValide && r2 && r2.value === "non") {
+                if (r4) {
+                    if (r4.value === "oui") {
+                        impossible = true;
+                    } else {
+                        const b5 = document.getElementById('bloc-q5');
+                        if (b5) b5.style.display = 'block';
+                    }
+                }
+            }
+
+            // Étape 5 : Q5 (connexion visio)
+            if (!impossible && r1 && r1.value === "non" && interventionValide && r2 && r2.value === "non" && r4 && r4.value === "non") {
+                if (r5) {
+                    if (r5.value === "non") {
+                        impossible = true;
+                    } else {
+                        const b6 = document.getElementById('bloc-q6');
+                        if (b6) b6.style.display = 'block';
+                    }
+                }
+            }
+
+            // Étape 6 : Q6 (webcam)
+            if (!impossible && r1 && r1.value === "non" && interventionValide && r2 && r2.value === "non" && r4 && r4.value === "non" && r5 && r5.value === "oui") {
+                if (r6) {
+                    if (r6.value === "non") {
+                        impossible = true;
+                    } else {
+                        const b7 = document.getElementById('bloc-q7');
+                        if (b7) b7.style.display = 'block';
+                    }
+                }
+            }
+
+            // Étape 7 : Q7 (micro)
+            if (!impossible && r1 && r1.value === "non" && interventionValide && r2 && r2.value === "non" && r4 && r4.value === "non" && r5 && r5.value === "oui" && r6 && r6.value === "oui") {
+                if (r7) {
+                    if (r7.value === "non") {
+                        impossible = true;
+                    } else {
+                        const b8 = document.getElementById('bloc-q8');
+                        if (b8) b8.style.display = 'block';
+                    }
+                }
+            }
+
+            // Étape 8 : Q8 (calme)
+            if (!impossible && r1 && r1.value === "non" && interventionValide &&
+                r2 && r2.value === "non" &&
+                r4 && r4.value === "non" &&
+                r5 && r5.value === "oui" &&
+                r6 && r6.value === "oui" &&
+                r7 && r7.value === "oui") {
+
+                if (r8) {
+                    if (r8.value === "non") {
+                        impossible = true;
+                    } else {
+                        // TOUTES les conditions sont remplies => C'EST POSSIBLE
+                        zoneResultat.style.color = "green";
+                        zoneResultat.innerHTML =
+                            "C’EST POSSIBLE POUR VOUS, prenez rendez-vous sur Doctolib en sélectionnant Téléconsultation.<br><br>" +
+                            "<div class='encadre'>" +
+                                "<div class='titre-encadre'>A lire avant votre téléconsultation</div>" +
+                                "<div class='texte-encadre'>" +
+                                "Dans des cas très rares il est possible que lors de la Téléconsultation le médecin anesthésiste " +
+                                "constate que votre état de santé nécessite de vous voir en présentiel et que la Téléconsultation " +
+                                "ne soit en fait pas possible pour vous. Dans ces rares situations une consultation présentielle " +
+                                "devra alors être programmée.<br><br>" +
+                                "Pensez à mettre avant la Téléconsultation sur Doctolib vos ordonnances, compte rendus de consultations " +
+                                "spécialisées notamment de cardiologie et le questionnaire d'anesthésie." +
+                                "</div>" +
+                            "</div>";
+                        boutonDoctolib.style.display = "block";
+                        return;
+                    }
+                }
+            }
+
+            // Si une réponse rend la téléconsultation impossible à n'importe quel moment
+            if (impossible) {
+                zoneResultat.style.color = "red";
                 zoneResultat.textContent =
-                    "CE N'EST PAS POSSIBLE pour vous, merci de prendre rendez-vous en présentiel via la plateforme Doctolib " +
-                    "en sélectionnant rendez-vous sur place.";
-                zoneResultat.style.color = "red";
+                    "CE N'EST PAS POSSIBLE pour vous, merci de prendre rendez-vous en présentiel.";
+                boutonDoctolib.style.display = "block";
             }
-
-            boutonDoctolib.style.display = "block";
         }
+
+        function reinitialiserFormulaire() {
+            const zoneResultat = document.getElementById("resultat");
+            const boutonDoctolib = document.getElementById("btn-doctolib");
+            zoneResultat.innerHTML = '';
+            zoneResultat.style.color = '';
+            boutonDoctolib.style.display = 'none';
+
+            // Laisse le reset du navigateur vider les réponses, puis réévalue l'affichage
+            setTimeout(evalQuestions, 0);
+        }
+
+        document.addEventListener('DOMContentLoaded', function () {
+            // Au chargement : initialiser l'affichage
+            evalQuestions();
+
+            // Ajout des écouteurs sur toutes les entrées pour évaluer en direct
+            const inputs = document.querySelectorAll('input[type="radio"]');
+            inputs.forEach(input => {
+                input.addEventListener('change', evalQuestions);
+            });
+
+            const selectQ3 = document.getElementById('q3');
+            if (selectQ3) {
+                selectQ3.addEventListener('change', evalQuestions);
+            }
+        });
         </script>
     </main>
 </body>
