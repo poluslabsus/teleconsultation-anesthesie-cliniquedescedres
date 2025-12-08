@@ -46,6 +46,7 @@
             color: white;
             text-decoration: none;
             cursor: pointer;
+            font-size: 16px;
         }
         .button:hover {
             background: #555;
@@ -145,10 +146,12 @@
                     Effacer mes réponses et recommencer
                 </button>
 
+                <!-- BOUTON DOCTOLIB AVEC LE MÊME STYLE QUE "VOIR LE RESULTAT" -->
                 <div class="centered" id="btn-doctolib" style="display:none;">
-                    <a rel="noreferrer noopener" style="color: #ff0000;"
-                       href="https://www.doctolib.fr/cabinet-medical/echirolles/cabinet-d-anesthesie-des-cedres"
-                       target="_blank">Retour vers Doctolib pour prendre rendez-vous</a>
+                    <button class="button"
+                        onclick="window.open('https://www.doctolib.fr/cabinet-medical/echirolles/cabinet-d-anesthesie-des-cedres', '_blank');">
+                        Retour vers Doctolib pour prendre rendez-vous
+                    </button>
                 </div>
 
             </form>
