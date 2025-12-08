@@ -5,43 +5,80 @@
     <title>Teleconsultation Anesthesie Clinique des Cedres</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <style>
+        :root {
+            --primary-text: #0d1938;
+            --body-text: #1f2933;
+            --button-bg: #0b2f6a;
+            --button-bg-hover: #0d3b85;
+            --button-text: #ffffff;
+        }
+
         body {
-            font-family: Arial, sans-serif;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+                         "Helvetica Neue", Arial, sans-serif;
             margin: 0;
             padding: 0;
             line-height: 1.6;
-            background: #f5f5f5;
+            background: #ffffff; /* 🔥 fond blanc pur */
+            color: var(--body-text);
         }
 
-        /* ======= NOUVEAU HEADER (comme sur la capture d’écran) ======= */
-        .titre-site {
+        /* ====== ENTÊTE CENTRÉ ====== */
+
+        .header-container {
+            width: 100%;
             text-align: center;
-            color: #0d1938;
-            font-size: 42px;
-            font-weight: 700;
-            padding: 40px 10px 10px 10px;
+            margin-top: 40px;
         }
 
-        .souligne {
+        .titre-site {
+            color: var(--primary-text);
+            font-size: 46px;
+            font-weight: 700;
+            margin: 0;
             display: inline-block;
-            border-bottom: 5px solid #0d1938;
-            padding-bottom: 5px;
+            position: relative;
+            padding-bottom: 10px; /* 🔥 espace texte → trait */
         }
+
+        .titre-site::after {
+            content: "";
+            display: block;
+            width: 100px;          /* 🔥 barre raccourcie à 100px */
+            height: 4px;           /* 🔥 épaisseur */
+            background-color: var(--primary-text);
+            margin: 10px auto 0 auto; /* 🔥 centrée + espace */
+            border-radius: 3px;
+        }
+
+        /* Sous-titre ajouté */
+        .sous-titre {
+            font-size: 40px;
+            color: var(--primary-text);
+            font-weight: 700;
+            margin-top: 15px;
+            margin-bottom: 30px;
+        }
+
+        /* ================== CONTENU ================== */
 
         main {
             max-width: 800px;
-            margin: 20px auto;
-            background: white;
+            margin: 20px auto 40px auto;
+            background: #ffffff;
             padding: 20px;
-            border-radius: 8px;
+
+            /* 🔥 Encadrement + ombre + arrondis */
+            border: 2px solid black;
+            border-radius: 15px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.25);
         }
 
-        /* ENCADRÉ GRIS SOUS LE TITRE */
         .encadre-tele {
             background: #eeeeee;
             border-radius: 8px;
             padding: 15px;
-            color: black;
+            color: var(--body-text);
             font-size: 17px;
             text-align: left;
             margin-bottom: 20px;
@@ -50,10 +87,12 @@
         section {
             margin-bottom: 40px;
         }
+
         h2 {
             border-bottom: 2px solid #ddd;
             padding-bottom: 5px;
             text-align: center;
+            color: var(--primary-text);
         }
 
         #resultat {
@@ -62,26 +101,32 @@
 
         .button {
             display: inline-block;
-            padding: 10px 15px;
+            padding: 10px 18px;
             margin-top: 10px;
-            border-radius: 4px;
+            border-radius: 8px;
             border: none;
-            background: #333;
-            color: white;
+            background: var(--button-bg);
+            color: var(--button-text);
             text-decoration: none;
             cursor: pointer;
             font-size: 16px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.03em;
         }
+
         .button:hover {
-            background: #555;
+            background: var(--button-bg-hover);
         }
 
         .question {
             margin-bottom: 20px;
         }
+
         .question p {
             margin-bottom: 5px;
             font-weight: bold;
+            color: var(--primary-text);
         }
 
         label {
@@ -93,12 +138,11 @@
             margin-top: 20px;
         }
 
-        /* Encadré bas */
         .encadre {
             background: #eeeeee;
             border-radius: 8px;
             padding: 15px;
-            color: black;
+            color: var(--body-text);
             text-align: center;
             margin-top: 20px;
         }
@@ -107,6 +151,7 @@
             font-weight: bold;
             margin-bottom: 10px;
             margin-top: 15px;
+            color: var(--primary-text);
         }
 
         .encadre .texte-encadre {
@@ -116,21 +161,27 @@
 </head>
 <body>
 
-    <!-- ======= NOUVEL ENTÊTE (remplace logo + bandeau bleu) ======= -->
-    <div class="titre-site">
-        Cabinet <span class="souligne">d'anesthésie</span> de la clinique des Cèdres
+    <div class="header-container">
+        <h1 class="titre-site">
+            Cabinet d'anesthésie de la clinique des Cèdres
+        </h1>
+        <div class="sous-titre">Espace Téléconsultation</div>
     </div>
 
     <main>
 
-        <!-- Encadré gris sous le titre -->
         <div class="encadre-tele">
-            Vous souhaitez réaliser votre consultation d'anesthésie en Téléconsultation : c'est à dire à distance via un logiciel dédié sécurisé.<br><br>
-            La Téléconsultation n'est pas une obligation c'est un souhait de votre part et une possibilité que nous proposons si vous êtes éligible.
+            Vous souhaitez réaliser votre consultation d'anesthésie en Téléconsultation : 
+            c'est à dire à distance via un logiciel dédié sécurisé.<br><br>
+            La Téléconsultation n'est pas une obligation c'est un souhait de votre part 
+            et une possibilité que nous proposons si vous êtes éligible.
         </div>
 
         <section id="questionnaire">
-            <h2>Questionnaire : Merci de répondre à TOUTES les questions pour savoir si c'est possible pour vous ou pas.</h2>
+            <h2>
+                Questionnaire : Merci de répondre à TOUTES les questions pour savoir 
+                si c'est possible pour vous ou pas.
+            </h2>
 
             <form id="questionnaire-form">
 
@@ -148,10 +199,14 @@
 
                 <div class="question">
                     <p>
-                        3. Prenez-vous des traitements anticoagulants ou anti-aggrégants plaquettaires ?
+                        3. Prenez-vous des traitements anticoagulants ou 
+                        anti-aggrégants plaquettaires ?
                         <br><br>
                         <i style="font-weight: normal;">
-                        (Aspirine, Resitune, Kardegic, Plavix, Clopidogrel, Xarelto, Rivaroxaban, Eliquis, Apixaban, Pradaxa, Dabigatran, Antivitamine K, Previscan, Fluindione, Coumadine, Warfarine, Sintrom, Acenocoumarol)
+                        (Aspirine, Resitune, Kardegic, Plavix, Clopidogrel, Xarelto, 
+                        Rivaroxaban, Eliquis, Apixaban, Pradaxa, Dabigatran, 
+                        Antivitamine K, Previscan, Fluindione, Coumadine, Warfarine, 
+                        Sintrom, Acenocoumarol)
                         </i>
                     </p>
                     <label><input type="radio" name="q3" value="oui"> Oui</label>
@@ -163,7 +218,13 @@
                         4. Êtes-vous opéré pour une des interventions suivantes ?
                         <br><br>
                         <i style="font-weight: normal;">
-                        Cystectomie, Bricker, Duodenoprancréatectomie, Pancréatectomie, Gastrectomie, Colectomie, Hépatectomie, Splénectomie, Prothese Totale de Hanche ou de Genou, Prothèse Totale d'Epaule, Hystérectomie, Osteotomie BiMaxillaire ou Mandibulaire, Laryngectomie, Cervicotomie, Parotidectomie, Cathetérisme des voies Biliaires, Dissection sous muqueuse ou Mucosectomie Gastrique ou Colique, Mastectomie d'affirmation de genre
+                        Cystectomie, Bricker, Duodenoprancréatectomie, Pancréatectomie,
+                        Gastrectomie, Colectomie, Hépatectomie, Splénectomie, 
+                        Prothèse Totale de Hanche ou de Genou, Prothèse Totale d'Épaule, 
+                        Hystérectomie, Ostéotomie BiMaxillaire ou Mandibulaire, 
+                        Laryngectomie, Cervicotomie, Parotidectomie, Cathétérisme des 
+                        voies biliaires, Dissection sous-muqueuse ou Mucosectomie 
+                        gastrique ou colique, Mastectomie d'affirmation de genre
                         </i>
                     </p>
                     <label><input type="radio" name="q4" value="oui"> Oui</label>
@@ -200,9 +261,9 @@
                     Voir le résultat
                 </button>
 
-                <button type="reset" class="button" style="background:#777; margin-left:10px;"
+                <button type="reset" class="button" style="background: var(--button-bg); margin-left:10px;"
                     onclick="document.getElementById('resultat').innerHTML=''; document.getElementById('btn-doctolib').style.display='none';">
-                    Effacer mes réponses et recommencer
+                    Effacer mes réponses
                 </button>
 
                 <div class="centered" id="btn-doctolib" style="display:none;">
@@ -218,7 +279,6 @@
 
         <script>
         function verifierQuestionnaire() {
-
             const r1 = document.querySelector('input[name="q1"]:checked');
             const r2 = document.querySelector('input[name="q2"]:checked');
             const r3 = document.querySelector('input[name="q3"]:checked');
@@ -230,7 +290,6 @@
 
             const zoneResultat = document.getElementById("resultat");
             const boutonDoctolib = document.getElementById("btn-doctolib");
-
             boutonDoctolib.style.display = "none";
 
             if (!r1 || !r2 || !r3 || !r4 || !r5 || !r6 || !r7 || !r8) {
@@ -256,13 +315,18 @@
                     "<div class='encadre'>" +
                         "<div class='titre-encadre'>A lire avant votre téléconsultation</div>" +
                         "<div class='texte-encadre'>" +
-                        "Dans des cas très rares il est possible que lors de la Téléconsultation le médecin anesthésiste constate que votre état de santé nécessite de vous voir en présentiel et que la Téléconsultation ne soit en fait pas possible pour vous. Dans ces rares situations une consultation présentielle devra alors être programmée.<br><br>" +
-                        "Pensez à mettre avant la Téléconsultation sur Doctolib vos ordonnances, compte rendus de consultations spécialisées notamment de cardiologie et le questionnaire d'anesthésie." +
+                        "Dans des cas très rares il est possible que lors de la Téléconsultation le médecin anesthésiste " +
+                        "constate que votre état de santé nécessite de vous voir en présentiel et que la Téléconsultation " +
+                        "ne soit en fait pas possible pour vous. Dans ces rares situations une consultation présentielle " +
+                        "devra alors être programmée.<br><br>" +
+                        "Pensez à mettre avant la Téléconsultation sur Doctolib vos ordonnances, compte rendus de consultations " +
+                        "spécialisées notamment de cardiologie et le questionnaire d'anesthésie." +
                         "</div>" +
                     "</div>";
             } else {
                 zoneResultat.textContent =
-                    "CE N'EST PAS POSSIBLE pour vous, merci de prendre rendez-vous en présentiel via la plateforme Doctolib en sélectionnant rendez-vous sur place.";
+                    "CE N'EST PAS POSSIBLE pour vous, merci de prendre rendez-vous en présentiel via la plateforme Doctolib " +
+                    "en sélectionnant rendez-vous sur place.";
                 zoneResultat.style.color = "red";
             }
 
