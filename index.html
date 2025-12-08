@@ -12,26 +12,51 @@
             line-height: 1.6;
             background: #f5f5f5;
         }
+
+        /* HEADER RECONSTRUIT */
         header {
             background: #4da3ff;
             color: white;
             padding: 20px;
             display: flex;
             align-items: center;
-            justify-content: left;
             gap: 20px;
         }
 
-        /* NOUVEL ENCADRÉ AU CENTRE DU HEADER */
+        /* Boîte grise centrée dans le header */
+        .header-box-container {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+        }
+
         .header-box {
             background: #eeeeee;
             border-radius: 8px;
-            padding: 10px 20px;
+            padding: 12px 25px;
             color: black;
-            font-size: 20px;
+            font-size: 22px;
             text-align: center;
-            margin: 0 auto;
             display: inline-block;
+            max-width: 500px;
+        }
+
+        /* Bloc du texte bleu restauré */
+        .header-text {
+            flex: 2;
+            text-align: left;
+        }
+
+        .header-text h1 {
+            margin: 0;
+            font-size: 20px;
+            color: white;
+        }
+
+        .header-text p {
+            margin: 8px 0 0 0;
+            font-size: 17px;
+            color: white;
         }
 
         main {
@@ -82,7 +107,7 @@
             margin-top: 20px;
         }
 
-        /* ENCADRÉ BAS DE PAGE */
+        /* Encadré bas de page */
         .encadre {
             background: #eeeeee;
             border-radius: 8px;
@@ -103,16 +128,24 @@
 </head>
 <body>
 
-    <!-- HEADER MODIFIÉ -->
+    <!-- HEADER MODIFIÉ + TEXTES RESTAURÉS -->
     <header>
-        <!-- Logo déplacé à gauche -->
+        <!-- Logo à gauche -->
         <img src="logo.png"
              alt="Clinique des Cèdres"
              style="max-width:180px; height:auto;">
 
-        <!-- Encadré au centre -->
-        <div class="header-box">
-            Cabinet d'Anesthésie de la Clinique des Cèdres
+        <!-- Encadré gris centré -->
+        <div class="header-box-container">
+            <div class="header-box">
+                Cabinet d'Anesthésie de la Clinique des Cèdres
+            </div>
+        </div>
+
+        <!-- Textes bleus restaurés à droite -->
+        <div class="header-text">
+            <h1>Vous souhaitez réaliser votre consultation d'anesthésie en Téléconsultation : c'est à dire à distance via un logiciel dédié sécurisé.</h1>
+            <p>La Téléconsultation n'est pas une obligation c'est un souhait de votre part et une possibilité que nous proposons si vous êtes éligible.</p>
         </div>
     </header>
 
