@@ -13,7 +13,7 @@
             background: #f5f5f5;
         }
         header {
-            background: #4da3ff; /* BLEU CLAIR */
+            background: #4da3ff;
             color: white;
             padding: 20px;
             text-align: center;
@@ -65,11 +65,20 @@
             text-align: center;
             margin-top: 20px;
         }
+
+        /* NOUVEL ENCADRÉ */
+        .encadre {
+            background: #eeeeee;
+            border-radius: 8px;
+            padding: 15px;
+            color: black;
+            text-align: left;
+            margin-top: 20px;
+        }
     </style>
 </head>
 <body>
     <header>
-        <!-- Logo -->
         <img src="logo.png"
              alt="Clinique des Cèdres"
              style="max-width:250px; display:block; margin:0 auto 10px auto;">
@@ -201,11 +210,13 @@
                 r8.value === "oui";
 
             if (ok) {
+                zoneResultat.style.color = "green";
                 zoneResultat.innerHTML =
                     "C’EST POSSIBLE POUR VOUS, prenez rendez-vous sur Doctolib en sélectionnant Téléconsultation.<br><br>" +
+                    "<div class='encadre'>" +
                     "Dans des cas très rares il est possible que lors de la Téléconsultation le médecin anesthésiste constate que votre état de santé nécessite de vous voir en présentiel et que la Téléconsultation ne soit en fait pas possible pour vous. Dans ces rares situations une consultation présentielle devra alors être programmée.<br><br>" +
-                    "Pensez à mettre avant la Téléconsultation sur Doctolib vos ordonnances, compte rendus de consultations spécialisées notamment de cardiologie et le questionnaire d'anesthésie.";
-                zoneResultat.style.color = "green";
+                    "Pensez à mettre avant la Téléconsultation sur Doctolib vos ordonnances, compte rendus de consultations spécialisées notamment de cardiologie et le questionnaire d'anesthésie." +
+                    "</div>";
             } else {
                 zoneResultat.textContent =
                     "CE N'EST PAS POSSIBLE pour vous, merci de prendre rendez-vous en présentiel via la plateforme Doctolib en sélectionnant rendez-vous sur place.";
