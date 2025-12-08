@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!DOCTYPE html> 
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
@@ -69,7 +69,6 @@
 <body>
     <header>
         <!-- Logo de la Clinique des Cèdres -->
-        <!-- Mets dans ton dépôt un fichier image avec ce nom ou adapte le chemin si besoin -->
         <img src="logo.png"
              alt="Clinique des Cèdres"
              style="max-width:250px; display:block; margin:0 auto 10px auto;">
@@ -146,13 +145,11 @@ Cystectomie, Bricker, Duodenoprancréatectomie, Pancréatectomie, Gastrectomie, 
                     Effacer mes réponses et recommencer
                 </button>
 
-                <!-- Bouton Doctolib : caché au départ, visible seulement après la réponse -->
+                <!-- Bouton Doctolib modifié EXACTEMENT comme demandé -->
                 <div class="centered" id="btn-doctolib" style="display:none;">
-                    <a class="button"
+                    <a rel="noreferrer noopener" style="color: #ff0000;"
                        href="https://www.doctolib.fr/cabinet-medical/echirolles/cabinet-d-anesthesie-des-cedres"
-                       target="_blank">
-                        Retour vers Doctolib pour la prise de rendez-vous
-                    </a>
+                       target="_blank">CLIQUER ICI</a>
                 </div>
 
             </form>
@@ -173,7 +170,6 @@ Cystectomie, Bricker, Duodenoprancréatectomie, Pancréatectomie, Gastrectomie, 
             const zoneResultat = document.getElementById("resultat");
             const boutonDoctolib = document.getElementById("btn-doctolib");
 
-            // Par défaut, tant qu'on n'a pas une réponse valide, on cache le bouton
             boutonDoctolib.style.display = "none";
 
             if (!r1 || !r2 || !r3 || !r4 || !r5 || !r6 || !r7 || !r8) {
@@ -204,13 +200,13 @@ Cystectomie, Bricker, Duodenoprancréatectomie, Pancréatectomie, Gastrectomie, 
                 zoneResultat.style.color = "red";
             }
 
-            // Une fois la réponse affichée (ok ou pas ok), on affiche le bouton Doctolib
             boutonDoctolib.style.display = "block";
         }
         </script>
     </main>
 </body>
 </html>
+
 
 
 
