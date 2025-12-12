@@ -150,6 +150,12 @@
         .encadre .texte-encadre {
             font-weight: normal;
         }
+
+        /* MODIFICATION UNIQUE DEMANDÉE */
+        option.option-autre {
+            font-weight: bold;
+            font-size: calc(1em + 2pt);
+        }
     </style>
 </head>
 <body>
@@ -172,20 +178,18 @@
 
         <section id="questionnaire">
             <h2>
-                Questionnaire : Merci de répondre à TOUTES les questions pour savoir 
+                Merci de répondre aux questions pour savoir 
                 si c'est possible pour vous ou pas.
             </h2>
 
             <form id="questionnaire-form">
 
-                <!-- Q1 : visible dès l'ouverture -->
                 <div class="question" id="bloc-q1">
                     <p>1. Avez-vous plus de <b>70 ans</b> ?</p>
                     <label><input type="radio" name="q1" value="oui"> Oui</label>
                     <label><input type="radio" name="q1" value="non"> Non</label>
                 </div>
 
-                <!-- Q2 : intervention -->
                 <div class="question" id="bloc-q2">
                     <p>2. Sélectionnez votre intervention :</p>
                     <select name="q3" id="q3">
@@ -213,18 +217,17 @@
                         <option value="mucosectomie-gastrique">Mucosectomie gastrique</option>
                         <option value="mucosectomie-colique">Mucosectomie colique</option>
                         <option value="mastectomie-affirmation-genre">Mastectomie d'affirmation de genre</option>
-                        <option value="autre">Mon intervention n'est pas dans cette liste</option>
+                        <option value="autre">----------------------------------------------</option>
+                        <option value="autre" class="option-autre">Mon intervention n'est pas dans cette liste</option>
                     </select>
                 </div>
 
-                <!-- Q3 : mineur -->
                 <div class="question" id="bloc-q3">
                     <p>3. Êtes-vous mineur ?</p>
                     <label><input type="radio" name="q2" value="oui"> Oui</label>
                     <label><input type="radio" name="q2" value="non"> Non</label>
                 </div>
 
-                <!-- Q4 : anticoagulants -->
                 <div class="question" id="bloc-q4">
                     <p>
                         4. Prenez-vous des traitements anticoagulants ou 
@@ -241,28 +244,24 @@
                     <label><input type="radio" name="q4" value="non"> Non</label>
                 </div>
 
-                <!-- Q5 -->
                 <div class="question" id="bloc-q5">
                     <p>5. Avez-vous une connexion internet permettant une visio ?</p>
                     <label><input type="radio" name="q5" value="oui"> Oui</label>
                     <label><input type="radio" name="q5" value="non"> Non</label>
                 </div>
 
-                <!-- Q6 -->
                 <div class="question" id="bloc-q6">
                     <p>6. Avez-vous une webcam fonctionnelle ?</p>
                     <label><input type="radio" name="q6" value="oui"> Oui</label>
                     <label><input type="radio" name="q6" value="non"> Non</label>
                 </div>
 
-                <!-- Q7 -->
                 <div class="question" id="bloc-q7">
                     <p>7. Avez-vous un microphone fonctionnel ?</p>
                     <label><input type="radio" name="q7" value="oui"> Oui</label>
                     <label><input type="radio" name="q7" value="non"> Non</label>
                 </div>
 
-                <!-- Q8 -->
                 <div class="question" id="bloc-q8">
                     <p>8. Serez-vous dans un endroit calme et silencieux lors de la téléconsultation ?</p>
                     <label><input type="radio" name="q8" value="oui"> Oui</label>
@@ -271,7 +270,6 @@
 
                 <p id="resultat" style="font-weight:bold; margin-top:20px;"></p>
 
-                <!-- Bouton RESET uniquement -->
                 <button type="reset" class="button" style="background: var(--button-bg); margin-left:10px;"
                     onclick="reinitialiserFormulaire();">
                     Effacer mes réponses
@@ -296,12 +294,11 @@
                 'bloc-q7','bloc-q8'
             ];
 
-            // Tout cacher sauf Q1, on va ensuite dévoiler au fur et à mesure
             blocIds.forEach((id, index) => {
                 const el = document.getElementById(id);
                 if (!el) return;
                 if (index === 0) {
-                    el.style.display = 'block'; // Q1
+                    el.style.display = 'block';
                 } else {
                     el.style.display = 'none';
                 }
@@ -313,38 +310,32 @@
             zoneResultat.style.color = "";
             boutonDoctolib.style.display = "none";
 
-            // Récupération des réponses
-            const r1 = document.querySelector('input[name="q1"]:checked'); // >70 ans
-            const selectInterv = document.getElementById('q3');            // intervention (q3)
-            const r2 = document.querySelector('input[name="q2"]:checked'); // mineur
-            const r4 = document.querySelector('input[name="q4"]:checked'); // anticoagulant
-            const r5 = document.querySelector('input[name="q5"]:checked'); // visio
-            const r6 = document.querySelector('input[name="q6"]:checked'); // webcam
-            const r7 = document.querySelector('input[name="q7"]:checked'); // micro
-            const r8 = document.querySelector('input[name="q8"]:checked'); // calme
+            const r1 = document.querySelector('input[name="q1"]:checked');
+            const selectInterv = document.getElementById('q3');
+            const r2 = document.querySelector('input[name="q2"]:checked');
+            const r4 = document.querySelector('input[name="q4"]:checked');
+            const r5 = document.querySelector('input[name="q5"]:checked');
+            const r6 = document.querySelector('input[name="q6"]:checked');
+            const r7 = document.querySelector('input[name="q7"]:checked');
+            const r8 = document.querySelector('input[name="q8"]:checked');
 
             let impossible = false;
 
-            // Étape 1 : Q1
             if (r1) {
                 if (r1.value === "oui") {
                     impossible = true;
                 } else {
-                    // Q1 = non -> on peut montrer Q2
                     const b2 = document.getElementById('bloc-q2');
                     if (b2) b2.style.display = 'block';
                 }
             }
 
-            // Étape 2 : Q2 (intervention)
             let interventionValide = false;
             if (!impossible && r1 && r1.value === "non") {
                 if (selectInterv && selectInterv.value !== "") {
                     if (selectInterv.value !== "autre") {
-                        // Intervention dans la liste => pas éligible
                         impossible = true;
                     } else {
-                        // Mon intervention n'est pas dans cette liste
                         interventionValide = true;
                         const b3 = document.getElementById('bloc-q3');
                         if (b3) b3.style.display = 'block';
@@ -352,20 +343,17 @@
                 }
             }
 
-            // Étape 3 : Q3 (mineur)
             if (!impossible && r1 && r1.value === "non" && interventionValide) {
                 if (r2) {
                     if (r2.value === "oui") {
                         impossible = true;
                     } else {
-                        // majeur => on peut afficher Q4
                         const b4 = document.getElementById('bloc-q4');
                         if (b4) b4.style.display = 'block';
                     }
                 }
             }
 
-            // Étape 4 : Q4 (anticoagulants)
             if (!impossible && r1 && r1.value === "non" && interventionValide && r2 && r2.value === "non") {
                 if (r4) {
                     if (r4.value === "oui") {
@@ -377,7 +365,6 @@
                 }
             }
 
-            // Étape 5 : Q5 (connexion visio)
             if (!impossible && r1 && r1.value === "non" && interventionValide && r2 && r2.value === "non" && r4 && r4.value === "non") {
                 if (r5) {
                     if (r5.value === "non") {
@@ -389,7 +376,6 @@
                 }
             }
 
-            // Étape 6 : Q6 (webcam)
             if (!impossible && r1 && r1.value === "non" && interventionValide && r2 && r2.value === "non" && r4 && r4.value === "non" && r5 && r5.value === "oui") {
                 if (r6) {
                     if (r6.value === "non") {
@@ -401,7 +387,6 @@
                 }
             }
 
-            // Étape 7 : Q7 (micro)
             if (!impossible && r1 && r1.value === "non" && interventionValide && r2 && r2.value === "non" && r4 && r4.value === "non" && r5 && r5.value === "oui" && r6 && r6.value === "oui") {
                 if (r7) {
                     if (r7.value === "non") {
@@ -413,7 +398,6 @@
                 }
             }
 
-            // Étape 8 : Q8 (calme)
             if (!impossible && r1 && r1.value === "non" && interventionValide &&
                 r2 && r2.value === "non" &&
                 r4 && r4.value === "non" &&
@@ -425,7 +409,6 @@
                     if (r8.value === "non") {
                         impossible = true;
                     } else {
-                        // TOUTES les conditions sont remplies => C'EST POSSIBLE
                         zoneResultat.style.color = "green";
                         zoneResultat.innerHTML =
                             "C’EST POSSIBLE POUR VOUS, prenez rendez-vous sur Doctolib en sélectionnant Téléconsultation.<br><br>" +
@@ -446,7 +429,6 @@
                 }
             }
 
-            // Si une réponse rend la téléconsultation impossible à n'importe quel moment
             if (impossible) {
                 zoneResultat.style.color = "red";
                 zoneResultat.textContent =
@@ -461,21 +443,15 @@
             zoneResultat.innerHTML = '';
             zoneResultat.style.color = '';
             boutonDoctolib.style.display = 'none';
-
-            // Laisse le reset du navigateur vider les réponses, puis réévalue l'affichage
             setTimeout(evalQuestions, 0);
         }
 
         document.addEventListener('DOMContentLoaded', function () {
-            // Au chargement : initialiser l'affichage
             evalQuestions();
-
-            // Ajout des écouteurs sur toutes les entrées pour évaluer en direct
             const inputs = document.querySelectorAll('input[type="radio"]');
             inputs.forEach(input => {
                 input.addEventListener('change', evalQuestions);
             });
-
             const selectQ3 = document.getElementById('q3');
             if (selectQ3) {
                 selectQ3.addEventListener('change', evalQuestions);
