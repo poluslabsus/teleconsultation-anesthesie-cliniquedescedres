@@ -185,7 +185,7 @@
             <form id="questionnaire-form">
 
                 <div class="question" id="bloc-q1">
-                    <p>1. Avez-vous plus de <b>70 ans</b> ?</p>
+                    <p>1. Avez-vous plus de <b>65 ans</b> ?</p>
                     <label><input type="radio" name="q1" value="oui"> Oui</label>
                     <label><input type="radio" name="q1" value="non"> Non</label>
                 </div>
@@ -196,6 +196,7 @@
                         <option value="">-- Sélectionnez votre intervention --</option>
                         <option value="cystectomie">Cystectomie</option>
                         <option value="bricker">Bricker</option>
+<option value="Prostatectomie">Prostatectomie</option>
                         <option value="duodenopancreatectomie">Duodenoprancréatectomie</option>
                         <option value="pancreatectomie">Pancréatectomie</option>
                         <option value="gastrectomie">Gastrectomie</option>
@@ -229,8 +230,32 @@
                 </div>
 
                 <div class="question" id="bloc-q4">
+                    <p>4. Avez-vous déjà été hospitalisé en réanimation ou en service de soins intensifs ?</p>
+                    <label><input type="radio" name="q4" value="oui"> Oui</label>
+                    <label><input type="radio" name="q4" value="non"> Non</label>
+                </div>
+
+                <div class="question" id="bloc-q5">
                     <p>
-                        4. Prenez-vous des traitements anticoagulants ou 
+                        5. Si vous avez déjà été opéré, y a t'il eu des complications au cours de cette intervention ?
+                        <span style="font-weight: normal;">(si vous n'avez jamais été opéré répondez Non)</span>
+                    </p>
+                    <label><input type="radio" name="q5" value="oui"> Oui</label>
+                    <label><input type="radio" name="q5" value="non"> Non</label>
+                </div>
+
+                <div class="question" id="bloc-q6">
+                    <p>
+                        6. Etes-vous capable de pratiquer un sport ou une activité physique ?
+                        <span style="font-weight: normal;">(Course à pied, montée de 3 étages sans s'arrêter, débroussailleuse)</span>
+                    </p>
+                    <label><input type="radio" name="q6" value="oui"> Oui</label>
+                    <label><input type="radio" name="q6" value="non"> Non</label>
+                </div>
+
+                <div class="question" id="bloc-q7">
+                    <p>
+                        7. Prenez-vous des traitements anticoagulants ou 
                         anti-aggrégants plaquettaires ?
                         <br><br>
                         <i style="font-weight: normal;">
@@ -240,32 +265,32 @@
                         Sintrom, Acenocoumarol)
                         </i>
                     </p>
-                    <label><input type="radio" name="q4" value="oui"> Oui</label>
-                    <label><input type="radio" name="q4" value="non"> Non</label>
-                </div>
-
-                <div class="question" id="bloc-q5">
-                    <p>5. Avez-vous une connexion internet permettant une visio ?</p>
-                    <label><input type="radio" name="q5" value="oui"> Oui</label>
-                    <label><input type="radio" name="q5" value="non"> Non</label>
-                </div>
-
-                <div class="question" id="bloc-q6">
-                    <p>6. Avez-vous une webcam fonctionnelle ?</p>
-                    <label><input type="radio" name="q6" value="oui"> Oui</label>
-                    <label><input type="radio" name="q6" value="non"> Non</label>
-                </div>
-
-                <div class="question" id="bloc-q7">
-                    <p>7. Avez-vous un microphone fonctionnel ?</p>
                     <label><input type="radio" name="q7" value="oui"> Oui</label>
                     <label><input type="radio" name="q7" value="non"> Non</label>
                 </div>
 
                 <div class="question" id="bloc-q8">
-                    <p>8. Serez-vous dans un endroit calme et silencieux lors de la téléconsultation ?</p>
+                    <p>8. Avez-vous une connexion internet permettant une visio ?</p>
                     <label><input type="radio" name="q8" value="oui"> Oui</label>
                     <label><input type="radio" name="q8" value="non"> Non</label>
+                </div>
+
+                <div class="question" id="bloc-q9">
+                    <p>9. Avez-vous une webcam fonctionnelle ?</p>
+                    <label><input type="radio" name="q9" value="oui"> Oui</label>
+                    <label><input type="radio" name="q9" value="non"> Non</label>
+                </div>
+
+                <div class="question" id="bloc-q10">
+                    <p>10. Avez-vous un microphone fonctionnel ?</p>
+                    <label><input type="radio" name="q10" value="oui"> Oui</label>
+                    <label><input type="radio" name="q10" value="non"> Non</label>
+                </div>
+
+                <div class="question" id="bloc-q11">
+                    <p>11. Serez-vous dans un endroit calme et silencieux lors de la téléconsultation ?</p>
+                    <label><input type="radio" name="q11" value="oui"> Oui</label>
+                    <label><input type="radio" name="q11" value="non"> Non</label>
                 </div>
 
                 <p id="resultat" style="font-weight:bold; margin-top:20px;"></p>
@@ -291,7 +316,7 @@
             const blocIds = [
                 'bloc-q1','bloc-q2','bloc-q3',
                 'bloc-q4','bloc-q5','bloc-q6',
-                'bloc-q7','bloc-q8'
+                'bloc-q7','bloc-q8','bloc-q9','bloc-q10','bloc-q11'
             ];
 
             blocIds.forEach((id, index) => {
@@ -318,6 +343,9 @@
             const r6 = document.querySelector('input[name="q6"]:checked');
             const r7 = document.querySelector('input[name="q7"]:checked');
             const r8 = document.querySelector('input[name="q8"]:checked');
+            const r9 = document.querySelector('input[name="q9"]:checked');
+            const r10 = document.querySelector('input[name="q10"]:checked');
+            const r11 = document.querySelector('input[name="q11"]:checked');
 
             let impossible = false;
 
@@ -354,6 +382,7 @@
                 }
             }
 
+            /* q4 : si "oui" => impossible, si "non" => question suivante */
             if (!impossible && r1 && r1.value === "non" && interventionValide && r2 && r2.value === "non") {
                 if (r4) {
                     if (r4.value === "oui") {
@@ -365,31 +394,25 @@
                 }
             }
 
+            /* q5 : si répondu => question suivante */
             if (!impossible && r1 && r1.value === "non" && interventionValide && r2 && r2.value === "non" && r4 && r4.value === "non") {
                 if (r5) {
-                    if (r5.value === "non") {
-                        impossible = true;
-                    } else {
-                        const b6 = document.getElementById('bloc-q6');
-                        if (b6) b6.style.display = 'block';
-                    }
+                    const b6 = document.getElementById('bloc-q6');
+                    if (b6) b6.style.display = 'block';
                 }
             }
 
-            if (!impossible && r1 && r1.value === "non" && interventionValide && r2 && r2.value === "non" && r4 && r4.value === "non" && r5 && r5.value === "oui") {
+            /* q6 (nouvelle question ajoutée) : si répondu => question suivante */
+            if (!impossible && r1 && r1.value === "non" && interventionValide && r2 && r2.value === "non" && r4 && r4.value === "non" && r5) {
                 if (r6) {
-                    if (r6.value === "non") {
-                        impossible = true;
-                    } else {
-                        const b7 = document.getElementById('bloc-q7');
-                        if (b7) b7.style.display = 'block';
-                    }
+                    const b7 = document.getElementById('bloc-q7');
+                    if (b7) b7.style.display = 'block';
                 }
             }
 
-            if (!impossible && r1 && r1.value === "non" && interventionValide && r2 && r2.value === "non" && r4 && r4.value === "non" && r5 && r5.value === "oui" && r6 && r6.value === "oui") {
+            if (!impossible && r1 && r1.value === "non" && interventionValide && r2 && r2.value === "non" && r4 && r4.value === "non" && r5 && r6) {
                 if (r7) {
-                    if (r7.value === "non") {
+                    if (r7.value === "oui") {
                         impossible = true;
                     } else {
                         const b8 = document.getElementById('bloc-q8');
@@ -398,15 +421,51 @@
                 }
             }
 
+            if (!impossible && r1 && r1.value === "non" && interventionValide && r2 && r2.value === "non" && r4 && r4.value === "non" && r5 && r6 && r7 && r7.value === "non") {
+                if (r8) {
+                    if (r8.value === "non") {
+                        impossible = true;
+                    } else {
+                        const b9 = document.getElementById('bloc-q9');
+                        if (b9) b9.style.display = 'block';
+                    }
+                }
+            }
+
+            if (!impossible && r1 && r1.value === "non" && interventionValide && r2 && r2.value === "non" && r4 && r4.value === "non" && r5 && r6 && r7 && r7.value === "non" && r8 && r8.value === "oui") {
+                if (r9) {
+                    if (r9.value === "non") {
+                        impossible = true;
+                    } else {
+                        const b10 = document.getElementById('bloc-q10');
+                        if (b10) b10.style.display = 'block';
+                    }
+                }
+            }
+
+            if (!impossible && r1 && r1.value === "non" && interventionValide && r2 && r2.value === "non" && r4 && r4.value === "non" && r5 && r6 && r7 && r7.value === "non" && r8 && r8.value === "oui" && r9 && r9.value === "oui") {
+                if (r10) {
+                    if (r10.value === "non") {
+                        impossible = true;
+                    } else {
+                        const b11 = document.getElementById('bloc-q11');
+                        if (b11) b11.style.display = 'block';
+                    }
+                }
+            }
+
             if (!impossible && r1 && r1.value === "non" && interventionValide &&
                 r2 && r2.value === "non" &&
                 r4 && r4.value === "non" &&
-                r5 && r5.value === "oui" &&
-                r6 && r6.value === "oui" &&
-                r7 && r7.value === "oui") {
+                r5 &&
+                r6 &&
+                r7 && r7.value === "non" &&
+                r8 && r8.value === "oui" &&
+                r9 && r9.value === "oui" &&
+                r10 && r10.value === "oui") {
 
-                if (r8) {
-                    if (r8.value === "non") {
+                if (r11) {
+                    if (r11.value === "non") {
                         impossible = true;
                     } else {
                         zoneResultat.style.color = "green";
