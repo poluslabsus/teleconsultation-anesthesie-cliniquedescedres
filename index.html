@@ -394,23 +394,35 @@
                 }
             }
 
-            /* q5 : si répondu => question suivante */
+            /* MODIF DEMANDÉE :
+               q5 : si "oui" => impossible ; si "non" => question suivante (bloc-q6)
+            */
             if (!impossible && r1 && r1.value === "non" && interventionValide && r2 && r2.value === "non" && r4 && r4.value === "non") {
                 if (r5) {
-                    const b6 = document.getElementById('bloc-q6');
-                    if (b6) b6.style.display = 'block';
+                    if (r5.value === "oui") {
+                        impossible = true;
+                    } else {
+                        const b6 = document.getElementById('bloc-q6');
+                        if (b6) b6.style.display = 'block';
+                    }
                 }
             }
 
-            /* q6 (nouvelle question ajoutée) : si répondu => question suivante */
-            if (!impossible && r1 && r1.value === "non" && interventionValide && r2 && r2.value === "non" && r4 && r4.value === "non" && r5) {
+            /* MODIF DEMANDÉE :
+               q6 : si "oui" => question suivante (bloc-q7) ; si "non" => impossible
+            */
+            if (!impossible && r1 && r1.value === "non" && interventionValide && r2 && r2.value === "non" && r4 && r4.value === "non" && r5 && r5.value === "non") {
                 if (r6) {
-                    const b7 = document.getElementById('bloc-q7');
-                    if (b7) b7.style.display = 'block';
+                    if (r6.value === "non") {
+                        impossible = true;
+                    } else {
+                        const b7 = document.getElementById('bloc-q7');
+                        if (b7) b7.style.display = 'block';
+                    }
                 }
             }
 
-            if (!impossible && r1 && r1.value === "non" && interventionValide && r2 && r2.value === "non" && r4 && r4.value === "non" && r5 && r6) {
+            if (!impossible && r1 && r1.value === "non" && interventionValide && r2 && r2.value === "non" && r4 && r4.value === "non" && r5 && r5.value === "non" && r6 && r6.value === "oui") {
                 if (r7) {
                     if (r7.value === "oui") {
                         impossible = true;
@@ -421,7 +433,7 @@
                 }
             }
 
-            if (!impossible && r1 && r1.value === "non" && interventionValide && r2 && r2.value === "non" && r4 && r4.value === "non" && r5 && r6 && r7 && r7.value === "non") {
+            if (!impossible && r1 && r1.value === "non" && interventionValide && r2 && r2.value === "non" && r4 && r4.value === "non" && r5 && r5.value === "non" && r6 && r6.value === "oui" && r7 && r7.value === "non") {
                 if (r8) {
                     if (r8.value === "non") {
                         impossible = true;
@@ -432,7 +444,7 @@
                 }
             }
 
-            if (!impossible && r1 && r1.value === "non" && interventionValide && r2 && r2.value === "non" && r4 && r4.value === "non" && r5 && r6 && r7 && r7.value === "non" && r8 && r8.value === "oui") {
+            if (!impossible && r1 && r1.value === "non" && interventionValide && r2 && r2.value === "non" && r4 && r4.value === "non" && r5 && r5.value === "non" && r6 && r6.value === "oui" && r7 && r7.value === "non" && r8 && r8.value === "oui") {
                 if (r9) {
                     if (r9.value === "non") {
                         impossible = true;
@@ -443,7 +455,7 @@
                 }
             }
 
-            if (!impossible && r1 && r1.value === "non" && interventionValide && r2 && r2.value === "non" && r4 && r4.value === "non" && r5 && r6 && r7 && r7.value === "non" && r8 && r8.value === "oui" && r9 && r9.value === "oui") {
+            if (!impossible && r1 && r1.value === "non" && interventionValide && r2 && r2.value === "non" && r4 && r4.value === "non" && r5 && r5.value === "non" && r6 && r6.value === "oui" && r7 && r7.value === "non" && r8 && r8.value === "oui" && r9 && r9.value === "oui") {
                 if (r10) {
                     if (r10.value === "non") {
                         impossible = true;
@@ -457,8 +469,8 @@
             if (!impossible && r1 && r1.value === "non" && interventionValide &&
                 r2 && r2.value === "non" &&
                 r4 && r4.value === "non" &&
-                r5 &&
-                r6 &&
+                r5 && r5.value === "non" &&
+                r6 && r6.value === "oui" &&
                 r7 && r7.value === "non" &&
                 r8 && r8.value === "oui" &&
                 r9 && r9.value === "oui" &&
