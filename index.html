@@ -151,7 +151,6 @@
             font-weight: normal;
         }
 
-        /* MODIFICATION UNIQUE DEMANDÉE */
         option.option-autre {
             font-weight: bold;
             font-size: calc(1em + 2pt);
@@ -170,10 +169,10 @@
     <main>
 
         <div class="encadre-tele">
-            Vous souhaitez réaliser votre consultation d'anesthésie en Téléconsultation : 
-            c'est à dire à distance via un logiciel dédié sécurisé.<br><br>
-            La Téléconsultation n'est pas une obligation c'est un souhait de votre part 
-            et une possibilité que nous proposons si vous êtes éligible.
+            <b>Vous souhaitez réaliser votre consultation d'anesthésie en Téléconsultation</b><br><br>
+            - Cela se fait à distance, en visio, via un logiciel sécurisé,<br>
+            - L'usage de la Téléconsultation n'est pas une obligation,<br>
+            - C'est un souhait de votre part et une possibilité que nous proposons si vous êtes éligible.
         </div>
 
         <section id="questionnaire">
@@ -230,24 +229,25 @@
                 </div>
 
                 <div class="question" id="bloc-q4">
-                    <p>4. Avez-vous déjà été hospitalisé en réanimation ou en service de soins intensifs ?</p>
+                    <p>
+                        4. Etes-vous une personne majeure protégée
+                        <span style="font-weight: normal;">(sous tutelle ou curatelle ou autre mesure de protection)</span>
+                        ou dépendante d'aide pour les démarches administratives ?
+                    </p>
                     <label><input type="radio" name="q4" value="oui"> Oui</label>
                     <label><input type="radio" name="q4" value="non"> Non</label>
                 </div>
 
                 <div class="question" id="bloc-q5">
-                    <p>
-                        5. Si vous avez déjà été opéré, y a t'il eu des complications au cours de cette intervention ?
-                        <span style="font-weight: normal;">(si vous n'avez jamais été opéré répondez Non)</span>
-                    </p>
+                    <p>5. Avez-vous déjà été hospitalisé en réanimation ou en service de soins intensifs ?</p>
                     <label><input type="radio" name="q5" value="oui"> Oui</label>
                     <label><input type="radio" name="q5" value="non"> Non</label>
                 </div>
 
                 <div class="question" id="bloc-q6">
                     <p>
-                        6. Etes-vous capable de pratiquer un sport ou une activité physique ?
-                        <span style="font-weight: normal;">(Course à pied, montée de 3 étages sans s'arrêter, débroussailleuse)</span>
+                        6. Si vous avez déjà été opéré, y a t'il eu des complications au cours de cette intervention ?
+                        <span style="font-weight: normal;">(si vous n'avez jamais été opéré répondez Non)</span>
                     </p>
                     <label><input type="radio" name="q6" value="oui"> Oui</label>
                     <label><input type="radio" name="q6" value="non"> Non</label>
@@ -255,42 +255,106 @@
 
                 <div class="question" id="bloc-q7">
                     <p>
-                        7. Prenez-vous des traitements anticoagulants ou 
-                        anti-aggrégants plaquettaires ?
-                        <br><br>
-                        <i style="font-weight: normal;">
-                        (Aspirine, Resitune, Kardegic, Plavix, Clopidogrel, Xarelto, 
-                        Rivaroxaban, Eliquis, Apixaban, Pradaxa, Dabigatran, 
-                        Antivitamine K, Previscan, Fluindione, Coumadine, Warfarine, 
-                        Sintrom, Acenocoumarol)
-                        </i>
+                        7. Etes-vous capable de pratiquer un sport ou une activité physique ?
+                        <span style="font-weight: normal;">(Course à pied, montée de 3 étages sans s'arrêter, débroussailleuse)</span>
                     </p>
                     <label><input type="radio" name="q7" value="oui"> Oui</label>
                     <label><input type="radio" name="q7" value="non"> Non</label>
                 </div>
 
                 <div class="question" id="bloc-q8">
-                    <p>8. Avez-vous une connexion internet permettant une visio ?</p>
+                    <p>
+                        8. Avez-vous déjà fait de l'angor, de l'angine de poitrine et/ou été victime d'un infarctus du myocarde <span style="font-weight: normal;">(le coeur)</span> ?
+                    </p>
                     <label><input type="radio" name="q8" value="oui"> Oui</label>
                     <label><input type="radio" name="q8" value="non"> Non</label>
                 </div>
 
                 <div class="question" id="bloc-q9">
-                    <p>9. Avez-vous une webcam fonctionnelle ?</p>
+                    <p>
+                        9. Avez-vous déjà été opéré du cœur et/ou eu la pose d'un stent <span style="font-weight: normal;">(ressort dans une artère)</span> ?
+                    </p>
                     <label><input type="radio" name="q9" value="oui"> Oui</label>
                     <label><input type="radio" name="q9" value="non"> Non</label>
                 </div>
 
                 <div class="question" id="bloc-q10">
-                    <p>10. Avez-vous un microphone fonctionnel ?</p>
+                    <p>10. Etes-vous porteur d'un pace maker ou d'un défibrillateur implantable ?</p>
                     <label><input type="radio" name="q10" value="oui"> Oui</label>
                     <label><input type="radio" name="q10" value="non"> Non</label>
                 </div>
 
                 <div class="question" id="bloc-q11">
-                    <p>11. Serez-vous dans un endroit calme et silencieux lors de la téléconsultation ?</p>
+                    <p>11. Vous a t-on déjà dit que vous aviez ou que vous faisiez de l'insuffisance cardiaque ?</p>
                     <label><input type="radio" name="q11" value="oui"> Oui</label>
                     <label><input type="radio" name="q11" value="non"> Non</label>
+                </div>
+
+                <div class="question" id="bloc-q12">
+                    <p>12. Avez-vous déjà été victime d'un AVC : Accident Vasculaire Cérébral ou d'un AIT : Accident Ischémique Transitoire ?</p>
+                    <label><input type="radio" name="q12" value="oui"> Oui</label>
+                    <label><input type="radio" name="q12" value="non"> Non</label>
+                </div>
+
+                <div class="question" id="bloc-q13">
+                    <p>
+                        13. Prenez-vous des traitements anticoagulants ou 
+                        anti-aggrégants plaquettaires ?
+                        <br><br>
+                        <i style="font-weight: normal;">
+                        (Plavix, Clopidogrel, Xarelto, 
+                        Rivaroxaban, Eliquis, Apixaban, Pradaxa, Dabigatran, 
+                        Antivitamine K, Previscan, Fluindione, Coumadine, Warfarine, 
+                        Sintrom, Acenocoumarol)
+                        </i>
+                    </p>
+                    <label><input type="radio" name="q13" value="oui"> Oui</label>
+                    <label><input type="radio" name="q13" value="non"> Non</label>
+                </div>
+
+                <div class="question" id="bloc-q14">
+                    <p>14. Etes-vous actuellement enrhumé et/ou avec la fièvre et/ou avec les poumons "pris" et/ou avec une toux inhabituelle ?</p>
+                    <label><input type="radio" name="q14" value="oui"> Oui</label>
+                    <label><input type="radio" name="q14" value="non"> Non</label>
+                </div>
+
+                <div class="question" id="bloc-q15">
+                    <p>
+                        15. Si vous êtes asthmatique, avez-vous fait une crise au cours des 3 derniers mois ?
+                        <span style="font-weight: normal;">(si vous n'est pas asthmatique répondez Non)</span>
+                    </p>
+                    <label><input type="radio" name="q15" value="oui"> Oui</label>
+                    <label><input type="radio" name="q15" value="non"> Non</label>
+                </div>
+
+                <div class="question" id="bloc-q16">
+                    <p>16. Avez-vous une bronchite chronique (BPCO) ou une maladie pulmonaire chronique ?</p>
+                    <label><input type="radio" name="q16" value="oui"> Oui</label>
+                    <label><input type="radio" name="q16" value="non"> Non</label>
+                </div>
+
+                <div class="question" id="bloc-q17">
+                    <p>17. Avez-vous une connexion internet permettant une visio ?</p>
+                    <label><input type="radio" name="q17" value="oui"> Oui</label>
+                    <label><input type="radio" name="q17" value="non"> Non</label>
+                </div>
+
+                <div class="question" id="bloc-q18">
+                    <p>18. Avez-vous une webcam fonctionnelle ?</p>
+                    <label><input type="radio" name="q18" value="oui"> Oui</label>
+                    <label><input type="radio" name="q18" value="non"> Non</label>
+                </div>
+
+                <div class="question" id="bloc-q19">
+                    <p>19. Avez-vous un microphone fonctionnel ?</p>
+                    <label><input type="radio" name="q19" value="oui"> Oui</label>
+                    <label><input type="radio" name="q19" value="non"> Non</label>
+                </div>
+
+                <div class="question" id="bloc-q20">
+                    <p>20. Serez-vous dans un endroit calme et silencieux lors de la téléconsultation ?</p>
+                    <label><input type="radio" name="q20" value="oui"> Oui</label>
+                    <label><input type="radio" name="q20" value="non"> Non</label>
                 </div>
 
                 <p id="resultat" style="font-weight:bold; margin-top:20px;"></p>
@@ -314,9 +378,10 @@
         <script>
         function evalQuestions() {
             const blocIds = [
-                'bloc-q1','bloc-q2','bloc-q3',
-                'bloc-q4','bloc-q5','bloc-q6',
-                'bloc-q7','bloc-q8','bloc-q9','bloc-q10','bloc-q11'
+                'bloc-q1','bloc-q2','bloc-q3','bloc-q4','bloc-q5','bloc-q6',
+                'bloc-q7','bloc-q8','bloc-q9','bloc-q10','bloc-q11','bloc-q12',
+                'bloc-q13','bloc-q14','bloc-q15','bloc-q16','bloc-q17','bloc-q18',
+                'bloc-q19','bloc-q20'
             ];
 
             blocIds.forEach((id, index) => {
@@ -346,6 +411,15 @@
             const r9 = document.querySelector('input[name="q9"]:checked');
             const r10 = document.querySelector('input[name="q10"]:checked');
             const r11 = document.querySelector('input[name="q11"]:checked');
+            const r12 = document.querySelector('input[name="q12"]:checked');
+            const r13 = document.querySelector('input[name="q13"]:checked');
+            const r14 = document.querySelector('input[name="q14"]:checked');
+            const r15 = document.querySelector('input[name="q15"]:checked');
+            const r16 = document.querySelector('input[name="q16"]:checked');
+            const r17 = document.querySelector('input[name="q17"]:checked');
+            const r18 = document.querySelector('input[name="q18"]:checked');
+            const r19 = document.querySelector('input[name="q19"]:checked');
+            const r20 = document.querySelector('input[name="q20"]:checked');
 
             let impossible = false;
 
@@ -382,7 +456,6 @@
                 }
             }
 
-            /* q4 : si "oui" => impossible, si "non" => question suivante */
             if (!impossible && r1 && r1.value === "non" && interventionValide && r2 && r2.value === "non") {
                 if (r4) {
                     if (r4.value === "oui") {
@@ -394,10 +467,8 @@
                 }
             }
 
-            /* MODIF DEMANDÉE :
-               q5 : si "oui" => impossible ; si "non" => question suivante (bloc-q6)
-            */
-            if (!impossible && r1 && r1.value === "non" && interventionValide && r2 && r2.value === "non" && r4 && r4.value === "non") {
+            if (!impossible && r1 && r1.value === "non" && interventionValide &&
+                r2 && r2.value === "non" && r4 && r4.value === "non") {
                 if (r5) {
                     if (r5.value === "oui") {
                         impossible = true;
@@ -408,12 +479,10 @@
                 }
             }
 
-            /* MODIF DEMANDÉE :
-               q6 : si "oui" => question suivante (bloc-q7) ; si "non" => impossible
-            */
-            if (!impossible && r1 && r1.value === "non" && interventionValide && r2 && r2.value === "non" && r4 && r4.value === "non" && r5 && r5.value === "non") {
+            if (!impossible && r1 && r1.value === "non" && interventionValide &&
+                r2 && r2.value === "non" && r4 && r4.value === "non" && r5 && r5.value === "non") {
                 if (r6) {
-                    if (r6.value === "non") {
+                    if (r6.value === "oui") {
                         impossible = true;
                     } else {
                         const b7 = document.getElementById('bloc-q7');
@@ -422,9 +491,10 @@
                 }
             }
 
-            if (!impossible && r1 && r1.value === "non" && interventionValide && r2 && r2.value === "non" && r4 && r4.value === "non" && r5 && r5.value === "non" && r6 && r6.value === "oui") {
+            if (!impossible && r1 && r1.value === "non" && interventionValide &&
+                r2 && r2.value === "non" && r4 && r4.value === "non" && r5 && r5.value === "non" && r6 && r6.value === "non") {
                 if (r7) {
-                    if (r7.value === "oui") {
+                    if (r7.value === "non") {
                         impossible = true;
                     } else {
                         const b8 = document.getElementById('bloc-q8');
@@ -433,9 +503,11 @@
                 }
             }
 
-            if (!impossible && r1 && r1.value === "non" && interventionValide && r2 && r2.value === "non" && r4 && r4.value === "non" && r5 && r5.value === "non" && r6 && r6.value === "oui" && r7 && r7.value === "non") {
+            if (!impossible && r1 && r1.value === "non" && interventionValide &&
+                r2 && r2.value === "non" && r4 && r4.value === "non" && r5 && r5.value === "non" &&
+                r6 && r6.value === "non" && r7 && r7.value === "oui") {
                 if (r8) {
-                    if (r8.value === "non") {
+                    if (r8.value === "oui") {
                         impossible = true;
                     } else {
                         const b9 = document.getElementById('bloc-q9');
@@ -444,9 +516,11 @@
                 }
             }
 
-            if (!impossible && r1 && r1.value === "non" && interventionValide && r2 && r2.value === "non" && r4 && r4.value === "non" && r5 && r5.value === "non" && r6 && r6.value === "oui" && r7 && r7.value === "non" && r8 && r8.value === "oui") {
+            if (!impossible && r1 && r1.value === "non" && interventionValide &&
+                r2 && r2.value === "non" && r4 && r4.value === "non" && r5 && r5.value === "non" &&
+                r6 && r6.value === "non" && r7 && r7.value === "oui" && r8 && r8.value === "non") {
                 if (r9) {
-                    if (r9.value === "non") {
+                    if (r9.value === "oui") {
                         impossible = true;
                     } else {
                         const b10 = document.getElementById('bloc-q10');
@@ -455,9 +529,11 @@
                 }
             }
 
-            if (!impossible && r1 && r1.value === "non" && interventionValide && r2 && r2.value === "non" && r4 && r4.value === "non" && r5 && r5.value === "non" && r6 && r6.value === "oui" && r7 && r7.value === "non" && r8 && r8.value === "oui" && r9 && r9.value === "oui") {
+            if (!impossible && r1 && r1.value === "non" && interventionValide &&
+                r2 && r2.value === "non" && r4 && r4.value === "non" && r5 && r5.value === "non" &&
+                r6 && r6.value === "non" && r7 && r7.value === "oui" && r8 && r8.value === "non" && r9 && r9.value === "non") {
                 if (r10) {
-                    if (r10.value === "non") {
+                    if (r10.value === "oui") {
                         impossible = true;
                     } else {
                         const b11 = document.getElementById('bloc-q11');
@@ -467,17 +543,157 @@
             }
 
             if (!impossible && r1 && r1.value === "non" && interventionValide &&
-                r2 && r2.value === "non" &&
-                r4 && r4.value === "non" &&
-                r5 && r5.value === "non" &&
-                r6 && r6.value === "oui" &&
-                r7 && r7.value === "non" &&
-                r8 && r8.value === "oui" &&
-                r9 && r9.value === "oui" &&
-                r10 && r10.value === "oui") {
-
+                r2 && r2.value === "non" && r4 && r4.value === "non" && r5 && r5.value === "non" &&
+                r6 && r6.value === "non" && r7 && r7.value === "oui" && r8 && r8.value === "non" &&
+                r9 && r9.value === "non" && r10 && r10.value === "non") {
                 if (r11) {
-                    if (r11.value === "non") {
+                    if (r11.value === "oui") {
+                        impossible = true;
+                    } else {
+                        const b12 = document.getElementById('bloc-q12');
+                        if (b12) b12.style.display = 'block';
+                    }
+                }
+            }
+
+            if (!impossible && r1 && r1.value === "non" && interventionValide &&
+                r2 && r2.value === "non" && r4 && r4.value === "non" && r5 && r5.value === "non" &&
+                r6 && r6.value === "non" && r7 && r7.value === "oui" && r8 && r8.value === "non" &&
+                r9 && r9.value === "non" && r10 && r10.value === "non" && r11 && r11.value === "non") {
+                if (r12) {
+                    if (r12.value === "oui") {
+                        impossible = true;
+                    } else {
+                        const b13 = document.getElementById('bloc-q13');
+                        if (b13) b13.style.display = 'block';
+                    }
+                }
+            }
+
+            if (!impossible && r1 && r1.value === "non" && interventionValide &&
+                r2 && r2.value === "non" && r4 && r4.value === "non" && r5 && r5.value === "non" &&
+                r6 && r6.value === "non" && r7 && r7.value === "oui" && r8 && r8.value === "non" &&
+                r9 && r9.value === "non" && r10 && r10.value === "non" && r11 && r11.value === "non" &&
+                r12 && r12.value === "non") {
+                if (r13) {
+                    if (r13.value === "oui") {
+                        impossible = true;
+                    } else {
+                        const b14 = document.getElementById('bloc-q14');
+                        if (b14) b14.style.display = 'block';
+                    }
+                }
+            }
+
+            /* q14 : si "oui" => impossible ; si "non" => question suivante (bloc-q15) */
+            if (!impossible && r1 && r1.value === "non" && interventionValide &&
+                r2 && r2.value === "non" && r4 && r4.value === "non" && r5 && r5.value === "non" &&
+                r6 && r6.value === "non" && r7 && r7.value === "oui" && r8 && r8.value === "non" &&
+                r9 && r9.value === "non" && r10 && r10.value === "non" && r11 && r11.value === "non" &&
+                r12 && r12.value === "non" && r13 && r13.value === "non") {
+                if (r14) {
+                    if (r14.value === "oui") {
+                        impossible = true;
+                    } else {
+                        const b15 = document.getElementById('bloc-q15');
+                        if (b15) b15.style.display = 'block';
+                    }
+                }
+            }
+
+            /* q15 : si "oui" => impossible ; si "non" => question suivante (bloc-q16) */
+            if (!impossible && r1 && r1.value === "non" && interventionValide &&
+                r2 && r2.value === "non" && r4 && r4.value === "non" && r5 && r5.value === "non" &&
+                r6 && r6.value === "non" && r7 && r7.value === "oui" && r8 && r8.value === "non" &&
+                r9 && r9.value === "non" && r10 && r10.value === "non" && r11 && r11.value === "non" &&
+                r12 && r12.value === "non" && r13 && r13.value === "non" && r14 && r14.value === "non") {
+                if (r15) {
+                    if (r15.value === "oui") {
+                        impossible = true;
+                    } else {
+                        const b16 = document.getElementById('bloc-q16');
+                        if (b16) b16.style.display = 'block';
+                    }
+                }
+            }
+
+            /* q16 : si "oui" => impossible ; si "non" => question suivante (bloc-q17) */
+            if (!impossible && r1 && r1.value === "non" && interventionValide &&
+                r2 && r2.value === "non" && r4 && r4.value === "non" && r5 && r5.value === "non" &&
+                r6 && r6.value === "non" && r7 && r7.value === "oui" && r8 && r8.value === "non" &&
+                r9 && r9.value === "non" && r10 && r10.value === "non" && r11 && r11.value === "non" &&
+                r12 && r12.value === "non" && r13 && r13.value === "non" && r14 && r14.value === "non" &&
+                r15 && r15.value === "non") {
+                if (r16) {
+                    if (r16.value === "oui") {
+                        impossible = true;
+                    } else {
+                        const b17 = document.getElementById('bloc-q17');
+                        if (b17) b17.style.display = 'block';
+                    }
+                }
+            }
+
+            /* q17 : si "non" => impossible ; si "oui" => question suivante (bloc-q18) */
+            if (!impossible && r1 && r1.value === "non" && interventionValide &&
+                r2 && r2.value === "non" && r4 && r4.value === "non" && r5 && r5.value === "non" &&
+                r6 && r6.value === "non" && r7 && r7.value === "oui" && r8 && r8.value === "non" &&
+                r9 && r9.value === "non" && r10 && r10.value === "non" && r11 && r11.value === "non" &&
+                r12 && r12.value === "non" && r13 && r13.value === "non" && r14 && r14.value === "non" &&
+                r15 && r15.value === "non" && r16 && r16.value === "non") {
+                if (r17) {
+                    if (r17.value === "non") {
+                        impossible = true;
+                    } else {
+                        const b18 = document.getElementById('bloc-q18');
+                        if (b18) b18.style.display = 'block';
+                    }
+                }
+            }
+
+            if (!impossible && r1 && r1.value === "non" && interventionValide &&
+                r2 && r2.value === "non" && r4 && r4.value === "non" && r5 && r5.value === "non" &&
+                r6 && r6.value === "non" && r7 && r7.value === "oui" && r8 && r8.value === "non" &&
+                r9 && r9.value === "non" && r10 && r10.value === "non" && r11 && r11.value === "non" &&
+                r12 && r12.value === "non" && r13 && r13.value === "non" && r14 && r14.value === "non" &&
+                r15 && r15.value === "non" && r16 && r16.value === "non" && r17 && r17.value === "oui") {
+                if (r18) {
+                    if (r18.value === "non") {
+                        impossible = true;
+                    } else {
+                        const b19 = document.getElementById('bloc-q19');
+                        if (b19) b19.style.display = 'block';
+                    }
+                }
+            }
+
+            if (!impossible && r1 && r1.value === "non" && interventionValide &&
+                r2 && r2.value === "non" && r4 && r4.value === "non" && r5 && r5.value === "non" &&
+                r6 && r6.value === "non" && r7 && r7.value === "oui" && r8 && r8.value === "non" &&
+                r9 && r9.value === "non" && r10 && r10.value === "non" && r11 && r11.value === "non" &&
+                r12 && r12.value === "non" && r13 && r13.value === "non" && r14 && r14.value === "non" &&
+                r15 && r15.value === "non" && r16 && r16.value === "non" && r17 && r17.value === "oui" &&
+                r18 && r18.value === "oui") {
+                if (r19) {
+                    if (r19.value === "non") {
+                        impossible = true;
+                    } else {
+                        const b20 = document.getElementById('bloc-q20');
+                        if (b20) b20.style.display = 'block';
+                    }
+                }
+            }
+
+            if (!impossible && r1 && r1.value === "non" && interventionValide &&
+                r2 && r2.value === "non" && r4 && r4.value === "non" && r5 && r5.value === "non" &&
+                r6 && r6.value === "non" && r7 && r7.value === "oui" && r8 && r8.value === "non" &&
+                r9 && r9.value === "non" && r10 && r10.value === "non" && r11 && r11.value === "non" &&
+                r12 && r12.value === "non" && r13 && r13.value === "non" && r14 && r14.value === "non" &&
+                r15 && r15.value === "non" && r16 && r16.value === "non" && r17 && r17.value === "oui" &&
+                r18 && r18.value === "oui" && r19 && r19.value === "oui") {
+
+                if (r20) {
+                    if (r20.value === "non") {
                         impossible = true;
                     } else {
                         zoneResultat.style.color = "green";
@@ -502,8 +718,15 @@
 
             if (impossible) {
                 zoneResultat.style.color = "red";
-                zoneResultat.textContent =
-                    "CE N'EST PAS POSSIBLE pour vous, merci de prendre rendez-vous en présentiel.";
+                zoneResultat.innerHTML =
+                    "CE N'EST PAS POSSIBLE pour vous, merci de prendre rendez-vous en présentiel." +
+                    "<div class='encadre'>" +
+                        "<div class='titre-encadre'>A lire</div>" +
+                        "<div class='texte-encadre'>" +
+                        "Au vu de ce questionnaire, les conditions de sécurité ne paraissent pas réunies pour que nous puissions vous proposer une téléconsultation. " +
+                        "Une consultation au cabinet, en présentiel est nécessaire pour la sécurité de votre prise en charge" +
+                        "</div>" +
+                    "</div>";
                 boutonDoctolib.style.display = "block";
             }
         }
